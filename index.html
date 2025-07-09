@@ -1,57 +1,112 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Screen Orientation</title>
-    <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" href="main.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spline 3D with Mobile Rotation</title>
+  <style>
+    /* CSS from your first question */
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+    }
+
+    body {
+      border: 1px solid black;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+    }
+
+    p {
+      font:-ALPHA- 1em sans-serif;
+      margin: 0;
+      padding: 0.5em;
+    }
+
+    ul {
+      list-style: none;
+      font: 1em monospace;
+      margin: 0;
+      padding: 0.5em;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      background: black;
+    }
+
+    li {
+      display: inline-block;
+      margin: 0;
+      padding: 0.5em;
+      background: white;
+    }
+
+    /* Canvas styling */
+    #canvas3d {
+      width: 100%;
+      height: 100%;
+      display: block; /* Ensures canvas behaves as a block element */
+    }
+
+    /* Rotate canvas in landscape on mobile */
+    @media (max-width: 768px) and (orientation: landscape) {
+      #canvas3d {
+        transform: rotate(90deg);
+        transform-origin: center;
+        width: 100vh; /* Swap width/height for landscape */
+        height: 100vw;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Screen Orientation</h1>
-    </header>
-    <main>
-        <div id="output"></div>
-    </main>    
-    <script>
-        let orn = getOrientation();
-        let out = document.getElementById('output');
-        out.textContent = orn;
-            
-        function getOrientation() {
-            let _orn = screen.msOrientation ||
-            (screen.orientation || screen.mozOrientation).type;
-        
-            switch(_orn){
-                case 'portrait-primary':
-                case 'portrait-secondary':
-                    
-                    break;
-                case 'landscape-primary':
-                    #console.log('This is the laptop/desktop version')
-                    import { Application } from '@splinetool/runtime';
-                    const canvas = document.getElementById('canvas3d');
-                    const app = new Application(canvas);
-                    app.load('https://prod.spline.design/arKumomJtipRgMnJ/scene.splinecode');
+  <canvas id="canvas3d"></canvas>
+  <ul>
+    <li>Control 1</li>
+    <li>Control 2</li>
+    <li>Control 3</li>
+  </ul>
 
-                    break;
-                case 'landscape-secondary':
-                    break;
-                case undefined:
-                    //not supported
-                    break;
-                default:
-                    //something unknown
-            }
-            return _orn;
-        }
-        
-        window.addEventListener('orientationchange', (ev)=>{
-            orn = getOrientation();
-            out.textContent = orn;
-            console.dir(ev)
-        })
-    </script>
+  <script type="module">
+    // Import Spline runtime from CDN
+    import { Application } from 'https://unpkg.com/@splinetool/runtime';
+
+    // Select the canvas element
+    const canvas = document.getElementById('canvas3d');
+
+    // Initialize Spline Application
+    const app = new Application(canvas);
+
+    // Load your Spline scene (replace with your scene URL)
+    app.load('https://prod.spline.design/arKumomJtipRgMnJ/scene.splinecode')
+      .then(() => {
+        console.log('Spline scene loaded successfully');
+      })
+      .catch((error) => {
+        console.error('Error loading Spline scene:', error);
+      });
+
+    // Function to handle orientation changes
+    function handleOrientationChange() {
+      const isMobile = window.matchMedia("(max-width: 768px)").matches;
+      const isLandscape = window.matchMedia("(orientation: landscape)").matches;
+
+      if (isMobile && isLandscape) {
+        console.log('Mobile device in landscape mode - canvas rotated via CSS');
+        // CSS handles rotation, but you can add JS-based adjustments here if needed
+      } else {
+        console.log('Portrait mode or non-mobile - no rotation needed');
+      }
+    }
+
+    // Listen for orientation changes and initial check
+    window.addEventListener('orientationchange', handleOrientationChange);
+    window.addEventListener('resize', handleOrientationChange);
+    handleOrientationChange(); // Check on$page load
+  </script>
 </body>
 </html>
-
-
