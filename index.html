@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>BLOCK FUTURE — LANDING</title>
+  <title>CYBERJACK — NEON ENTRY</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700;800&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=VT323&display=swap" rel="stylesheet">
 
   <style>
     * {
@@ -16,166 +16,237 @@
     }
 
     body {
-      font-family: 'Space Grotesk', system-ui, sans-serif;
-      background: #000;
-      color: #fff;
-      line-height: 1.1;
+      font-family: 'Orbitron', sans-serif;
+      background: #0a0015;
+      color: #00f3ff;
+      min-height: 100vh;
       overflow-x: hidden;
+      position: relative;
     }
 
-    .video-container {
+    /* Video BG – cyberpunk city vibes */
+    .video-bg {
       position: fixed;
       inset: 0;
-      z-index: -2;
-      overflow: hidden;
-      background: #111;
-    }
-
-    .video-bg {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      filter: brightness(0.65) contrast(1.15);
+      z-index: -3;
+      filter: brightness(0.45) contrast(1.25) saturate(1.4);
     }
 
     .overlay {
       position: fixed;
       inset: 0;
-      background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.85) 60%, #000 100%);
+      background: radial-gradient(circle at 20% 80%, rgba(255,0,200,0.08), transparent 40%),
+                  radial-gradient(circle at 80% 20%, rgba(0,243,255,0.12), transparent 50%),
+                  rgba(10,0,21,0.75);
+      z-index: -2;
+      pointer-events: none;
+    }
+
+    .scanlines {
+      position: fixed;
+      inset: 0;
+      background: repeating-linear-gradient(
+        to bottom,
+        transparent 0%,
+        rgba(0,0,0,0.03) 1px,
+        transparent 2px
+      );
+      background-size: 100% 4px;
+      pointer-events: none;
       z-index: -1;
+      animation: scan 8s linear infinite;
+    }
+
+    @keyframes scan {
+      0% { transform: translateY(-100%); }
+      100% { transform: translateY(100%); }
     }
 
     .hero {
       min-height: 100vh;
-      display: grid;
-      place-items: center;
-      padding: 4vh 5vw;
-      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       text-align: center;
+      padding: 4rem 1rem;
+      position: relative;
     }
 
-    .content-block {
-      background: rgba(20,20,20,0.7);
-      border: 3px solid #fff;
-      padding: 5vh 6vw;
-      max-width: 1100px;
-      backdrop-filter: blur(4px);
+    .glitch {
+      position: relative;
+      font-family: 'VT323', monospace;
+      font-size: clamp(5rem, 18vw, 14rem);
+      font-weight: 400;
+      letter-spacing: 0.02em;
+      color: #fff;
+      text-shadow: 
+        0.05em 0 0 #ff00c1,
+        -0.05em 0 0 #00f3ff;
+      animation: glitch-skew 6s infinite linear alternate-reverse;
     }
 
-    h1 {
-      font-family: 'Roboto Mono', monospace;
-      font-size: clamp(5rem, 14vw, 14rem);
-      font-weight: 700;
-      letter-spacing: -0.06em;
-      line-height: 0.88;
-      text-transform: uppercase;
-      margin-bottom: 0.4em;
-      background: #fff;
-      color: #000;
-      padding: 0 0.15em;
-      display: inline-block;
+    .glitch::before,
+    .glitch::after {
+      content: attr(data-text);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0.8;
+    }
+
+    .glitch::before {
+      left: 0.02em;
+      text-shadow: -0.04em 0 0 #ff00c1, 0.04em 0 0 #00f3ff;
+      clip: rect(0, 900px, 0, 0);
+      animation: glitch-anim 4s infinite steps(20, jump-none);
+    }
+
+    .glitch::after {
+      left: -0.02em;
+      text-shadow: -0.06em 0 0 #00f3ff, 0.06em 0 0 #ff00c1;
+      clip: rect(0, 900px, 0, 0);
+      animation: glitch-anim2 5s infinite steps(18, jump-none);
+    }
+
+    @keyframes glitch-anim {
+      0%   { clip: rect(42px, 9999px, 88px, 0); transform: skew(0.4deg); }
+      5%   { clip: rect(17px, 9999px, 94px, 0); transform: skew(0.8deg); }
+      10%  { clip: rect(63px, 9999px, 102px, 0); transform: skew(-0.2deg); }
+      15%  { clip: rect(30px, 9999px, 87px, 0); transform: skew(0.6deg); }
+      20%  { clip: rect(85px, 9999px, 120px, 0); transform: skew(-0.5deg); }
+      100% { clip: rect(55px, 9999px, 98px, 0); transform: skew(0.3deg); }
+    }
+
+    @keyframes glitch-anim2 {
+      0%   { clip: rect(65px, 9999px, 119px, 0); }
+      5%   { clip: rect(76px, 9999px, 105px, 0); }
+      10%  { clip: rect(25px, 9999px, 78px, 0); }
+      15%  { clip: rect(90px, 9999px, 140px, 0); }
+      20%  { clip: rect(10px, 9999px, 55px, 0); }
+      100% { clip: rect(80px, 9999px, 130px, 0); }
+    }
+
+    @keyframes glitch-skew {
+      0%, 100% { transform: skew(0deg); }
+      10%, 40%, 70% { transform: skew(2deg); }
+      20%, 60% { transform: skew(-3deg); }
     }
 
     .subtitle {
-      font-size: clamp(1.8rem, 5vw, 4.2rem);
-      font-weight: 500;
-      margin-bottom: 2.5rem;
-      opacity: 0.95;
-      letter-spacing: -0.02em;
+      font-size: clamp(1.8rem, 5vw, 3.5rem);
+      margin: 1.5rem 0 3rem;
+      color: #ff00c1;
+      text-shadow: 0 0 15px #ff00c1;
+      letter-spacing: 0.15em;
+      animation: flicker 3s infinite alternate;
     }
 
-    .subtitle span {
-      background: #ff00aa;
-      color: #000;
-      padding: 0 0.2em;
-      font-weight: 700;
+    @keyframes flicker {
+      0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% { opacity: 1; }
+      20%, 24%, 55% { opacity: 0.4; }
     }
 
-    .cta-button {
-      display: inline-block;
-      font-family: 'Roboto Mono', monospace;
-      font-size: clamp(1.6rem, 4vw, 2.8rem);
-      font-weight: 700;
-      text-transform: uppercase;
-      padding: 1.2rem 2.8rem;
-      background: #fff;
-      color: #000;
-      border: 4px solid #fff;
+    .neon-btn {
+      position: relative;
+      padding: 1.2rem 3rem;
+      font-family: 'VT323', monospace;
+      font-size: clamp(1.8rem, 5vw, 3rem);
+      color: #00f3ff;
       text-decoration: none;
-      transition: all 0.12s ease;
-      letter-spacing: 0.05em;
+      border: 2px solid #00f3ff;
+      background: transparent;
+      text-shadow: 0 0 10px #00f3ff;
+      box-shadow: 
+        inset 0 0 20px rgba(0,243,255,0.3),
+        0 0 30px rgba(0,243,255,0.4);
+      overflow: hidden;
+      transition: all 0.4s;
+      cursor: pointer;
+      letter-spacing: 0.2em;
     }
 
-    .cta-button:hover,
-    .cta-button:focus {
-      background: #000;
-      color: #fff;
-      transform: translate(-8px, -8px);
-      box-shadow: 8px 8px 0 #ff00aa;
+    .neon-btn:hover {
+      color: #000;
+      background: #00f3ff;
+      box-shadow: 
+        inset 0 0 40px rgba(0,0,0,0.6),
+        0 0 80px #00f3ff,
+        0 0 120px #ff00c1;
+      transform: scale(1.08) rotate(1deg);
     }
 
-    .noise {
-      position: fixed;
-      inset: 0;
+    .neon-btn::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(
+        45deg,
+        transparent,
+        rgba(255,0,193,0.3),
+        transparent
+      );
+      transform: rotate(45deg);
+      animation: shine 6s infinite linear;
       pointer-events: none;
-      background: url('https://images.unsplash.com/photo-1557683311-973673bafafb?w=100') repeat;
-      opacity: 0.04;
-      mix-blend-mode: overlay;
-      z-index: -1;
-      animation: grain 8s steps(10) infinite;
     }
 
-    @keyframes grain {
-      0%, 100% { transform: translate(0,0); }
-      10% { transform: translate(-2%, -2%); }
-      20% { transform: translate(2%, 2%); }
-      30% { transform: translate(-1%, 1%); }
-      40% { transform: translate(1%, -1%); }
-      50% { transform: translate(-3%, 0); }
-      60% { transform: translate(3%, 0); }
-      70% { transform: translate(0, -3%); }
-      80% { transform: translate(0, 3%); }
-      90% { transform: translate(2%, -2%); }
+    @keyframes shine {
+      0% { transform: translateX(-100%) rotate(45deg); }
+      50% { transform: translateX(100%) rotate(45deg); }
+      100% { transform: translateX(300%) rotate(45deg); }
     }
+
+    .corner-glow {
+      position: absolute;
+      width: 120px;
+      height: 120px;
+      border: 3px solid;
+      opacity: 0.4;
+      pointer-events: none;
+    }
+
+    .tl { top: 0; left: 0; border-right: none; border-bottom: none; border-color: #00f3ff; }
+    .tr { top: 0; right: 0; border-left: none; border-bottom: none; border-color: #ff00c1; }
+    .bl { bottom: 0; left: 0; border-right: none; border-top: none; border-color: #ff00c1; }
+    .br { bottom: 0; right: 0; border-left: none; border-top: none; border-color: #00f3ff; }
 
     @media (max-width: 640px) {
-      .content-block {
-        padding: 8vh 6vw;
-        border-width: 2px;
-      }
-      h1 {
-        font-size: clamp(4rem, 18vw, 9rem);
-      }
-      .subtitle {
-        font-size: clamp(1.6rem, 6vw, 2.8rem);
-      }
-      .cta-button {
-        padding: 1rem 2rem;
-      }
+      .glitch { font-size: clamp(4rem, 16vw, 9rem); }
+      .subtitle { font-size: clamp(1.4rem, 6vw, 2.2rem); }
+      .neon-btn { padding: 1rem 2.5rem; font-size: 2.2rem; }
     }
   </style>
 </head>
 <body>
 
-  <div class="video-container">
-    <video class="video-bg" autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1557683316-973673baf926?w=1920">
-      <source src="https://assets.mixkit.co/videos/preview/mixkit-abstract-video-of-a-man-holding-a-camera-32660-large.mp4" type="video/mp4">
-    </video>
-  </div>
+  <video class="video-bg" autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1557683316-973673baf926?w=1920">
+    <!-- Cyberpunk city night – free stock example; swap with your own preferred cyberpunk video -->
+    <source src="https://assets.mixkit.co/videos/preview/mixkit-futuristic-city-with-neon-lights-at-night-19213-large.mp4" type="video/mp4">
+    <!-- Alternative free sources: pexels.com/videos/cyberpunk, pixabay.com/videos/search/cyberpunk, mixkit.co -->
+  </video>
 
   <div class="overlay"></div>
-  <div class="noise"></div>
+  <div class="scanlines"></div>
 
   <section class="hero">
-    <div class="content-block">
-      <h1>FUTURE<br>BLOCK</h1>
-      <p class="subtitle">
-        RAW. DIRECT.<br>
-        <span>NO COMPROMISE</span>
-      </p>
+    <h1 class="glitch" data-text="NIGHT CITY">NIGHT CITY</h1>
+    <p class="subtitle">JACK IN → SYSTEM ACCESS</p>
 
-      <a href="#enter" class="cta-button">ENTER SYSTEM</a>
-    </div>
+    <a href="#" class="neon-btn">ENTER GRID</a>
+
+    <div class="corner-glow tl"></div>
+    <div class="corner-glow tr"></div>
+    <div class="corner-glow bl"></div>
+    <div class="corner-glow br"></div>
   </section>
 
 </body>
