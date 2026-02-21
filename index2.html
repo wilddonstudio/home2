@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wild Don Animation Studio</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         *, *::before, *::after {
@@ -15,13 +16,13 @@
         :root {
             --bg-dark: #0a0a0f;
             --bg-card: #12121a;
-            --accent: #7c3aed;
+            --accent: #00ff77;
             --accent-light: #a78bfa;
             --accent-glow: rgba(124, 58, 237, 0.3);
-            --text-primary: #f0f0f5;
+            --text-primary: #f0f0f0;
             --text-secondary: #9999aa;
             --border: #1e1e2e;
-            --gradient-1: linear-gradient(135deg, #7c3aed, #ec4899);
+            --gradient-1: linear-gradient(135deg, #00ff77, #ff0088);
             --gradient-2: linear-gradient(135deg, #3b82f6, #7c3aed);
         }
 
@@ -370,6 +371,72 @@
             font-size: 0.9rem;
             line-height: 1.6;
         }
+        .image-container {
+          width: 100%;
+          margin: 1px auto;
+          padding: 1px;
+          border: 1px solid #ddd;
+          background: #f9f9f9;
+          border-radius: 8px;
+          box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+    
+        .image-container img {
+          max-width: 100%;
+          height: auto;
+          display: block;
+          margin: 0 auto;
+        }
+    
+        /* Optional semi-transparent overlay for better readability */
+        .video-overlay {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(0, 0, 0, 0.4); /* Adjust opacity as needed */
+          z-index: 2; /* Above video, below text */
+        }
+            /* Text on top */
+        .overlay-text {
+          position: relative; /* Or absolute if not using flex */
+          z-index: 3; /* Above everything */
+          text-align: center;
+          max-width: 80%;
+          padding: 2rem;
+          text-shadow: 0 2px 10px rgba(0,0,0,0.8); /* Shadow for contrast */
+        }
+    
+        .overlay-text h1 {
+          font-size: clamp(2.5rem, 8vw, 5rem);
+          margin-bottom: 1rem;
+        }
+    
+        .overlay-text p {
+          font-size: 1.2rem;
+          max-width: 600px;
+          margin: 0 auto;
+        }
+
+    
+        .image-container img {
+          max-width: 100%;
+          height: auto;
+          display: block;
+          margin: 0 auto;
+        }
+    
+        /* Optional semi-transparent overlay for better readability */
+        .video-overlay {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(0, 0, 0, 0.4); /* Adjust opacity as needed */
+          z-index: 2; /* Above video, below text */
+        }
 
         /* ---- SHOWREEL ---- */
         .showreel {
@@ -442,11 +509,16 @@
 
         .work-card {
             position: relative;
+            padding: 20px;
             border-radius: 20px;
             overflow: hidden;
-            aspect-ratio: 4 / 3;
             cursor: pointer;
             border: 1px solid var(--border);
+            z-index: 1;
+            transition: all 0.5s ease;
+            height: 300px; /* Adjust height for video visibility in compact state */
+            
+            
         }
 
         .work-card-bg {
@@ -457,6 +529,7 @@
             justify-content: center;
             font-size: 4rem;
             transition: transform 0.5s;
+            z-index: -1;
         }
 
         .work-card:nth-child(1) .work-card-bg { background: linear-gradient(135deg, #1e1b4b, #4c1d95); }
@@ -497,7 +570,100 @@
             font-size: 0.85rem;
             color: var(--accent-light);
         }
-
+        /* Hidden content (e.g., media player or text) --------------------BUTTON*/
+        .button-content {
+          margin-top: 15px;
+          opacity: 0;
+          transform: scale(0.8);
+          transition: all 0.5s ease;
+          max-height: 0;
+          position: relative;
+          z-index: 1;
+        }
+    
+        /* Expanded state – full-page overlay */
+        .work-card.expanded {
+          position: fixed;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 80vw;
+          max-width: 900px;
+          height: auto;
+          padding: 30px;
+          background: #fff;
+          color: #000;
+          border-radius: 12px;
+          box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+          z-index: 1001;
+        }
+    
+        .work-card.expanded .work-card-bg {
+          opacity: 0; /* Hide label when expanded */
+          pointer-events: none; /* Prevent interaction */
+        }
+        .work-card.expanded .work-card-overlay {
+          opacity: 0; /* Hide label when expanded */
+          pointer-events: none; /* Prevent interaction */
+        }
+    
+        .work-card.expanded .button-content {
+          opacity: 1;
+          transform: scale(1);
+          max-height: 500px; /* Adjust based on content */
+        }
+    
+        /* Close button in expanded mode */
+        .close-btn {
+          position: absolute;
+          top: 15px;
+          right: 20px;
+          background: none;
+          border: none;
+          color: #aaa;
+          font-size: 1.8rem;
+          cursor: pointer;
+          display: none;
+        }
+    
+        .work-card.expanded .close-btn {
+          display: block;
+        }
+    
+        .close-btn:hover {
+          color: #666;
+        }
+    
+        /* Backdrop overlay (dims the page) */
+        .backdrop {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100vw;
+          height: 100vh;
+          background: rgba(0, 0, 0, 0.7);
+          opacity: 0;
+          pointer-events: none;
+          transition: opacity 0.5s ease;
+          z-index: 1000;
+        }
+    
+        .backdrop.visible {
+          opacity: 1;
+          pointer-events: auto;
+        }
+    
+        /* Hover effect (compact state) */
+        .work-card:not(.expanded):hover .work-card-overlay {
+            opacity: 1;
+        }
+    
+        /* Example content styling (video or text) */
+        video {
+          width: 100%;
+          border-radius: 4px;
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
         /* ---- PROCESS ---- */
         .process-steps {
             max-width: 900px;
@@ -568,73 +734,6 @@
         .stat-item p {
             color: var(--text-secondary);
             font-size: 0.9rem;
-        }
-
-        /* ---- TESTIMONIALS ---- */
-        .testimonials-grid {
-            max-width: 1100px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .testimonial-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            padding: 2rem;
-            transition: border-color 0.3s;
-        }
-
-        .testimonial-card:hover {
-            border-color: rgba(124, 58, 237, 0.3);
-        }
-
-        .stars {
-            color: #f59e0b;
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
-            letter-spacing: 2px;
-        }
-
-        .testimonial-card blockquote {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-            line-height: 1.7;
-            margin-bottom: 1.5rem;
-            font-style: italic;
-        }
-
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
-        }
-
-        .author-avatar {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            font-size: 0.9rem;
-        }
-
-        .testimonial-card:nth-child(1) .author-avatar { background: rgba(124, 58, 237, 0.2); color: var(--accent-light); }
-        .testimonial-card:nth-child(2) .author-avatar { background: rgba(236, 72, 153, 0.2); color: #f472b6; }
-        .testimonial-card:nth-child(3) .author-avatar { background: rgba(59, 130, 246, 0.2); color: #60a5fa; }
-
-        .author-info h4 {
-            font-size: 0.9rem;
-            font-weight: 600;
-        }
-
-        .author-info span {
-            font-size: 0.8rem;
-            color: var(--text-secondary);
         }
 
         /* ---- CTA ---- */
@@ -765,18 +864,35 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--text-secondary);
+            color: var(--text-primary);
             text-decoration: none;
             font-size: 0.85rem;
             transition: border-color 0.3s, color 0.3s, background 0.3s;
         }
 
         .social-links a:hover {
-            border-color: var(--accent);
+            border-color: var(--border);
             color: var(--accent-light);
             background: rgba(124, 58, 237, 0.1);
         }
 
+        }
+        .social-links a svg {
+            width: 16px;
+            height: auto;
+            margin-right: 10px;
+        }
+
+        .social-links a svg path {
+            fill: var(--text-primary);            
+            transition: fill 0.3s ease;
+        }
+        
+
+        .social-links a:hover svg path {
+            fill: var(--accent-light);             
+
+        }
         /* ---- MOBILE ---- */
         .mobile-menu {
             display: none;
@@ -854,13 +970,19 @@
             opacity: 1;
             transform: translateY(0);
         }
+        
+
     </style>
 </head>
 <body>
 
     <!-- NAVBAR -->
     <nav>
-        <div class="logo">Frame<span>Forge</span></div>
+        <div class="logo">
+            <img src=https://res.cloudinary.com/dqi5wqqeo/image/upload/v1771604080/logo_white_wgxyo9.svg
+                	style= height=128 width=180>
+
+        </div>
         <ul class="nav-links">
             <li><a href="#services">Services</a></li>
             <li><a href="#work">Work</a></li>
@@ -936,9 +1058,7 @@
         </div>
         <div class="services-grid">
             <div class="service-card fade-up">
-                <div class="service-icon">🎬</div>
-                <h3>3D Animation</h3>
-                <p>Photorealistic and stylized 3D animation for films, commercials, and product visualization that pushes creative boundaries.</p>
+
             </div>
             <div class="service-card fade-up">
                 <div class="service-icon">✏️</div>
@@ -968,21 +1088,6 @@
         </div>
     </section>
 
-    <!-- SHOWREEL -->
-    <section class="showreel" id="showreel">
-        <div class="section-header fade-up">
-            <span class="section-tag">Showreel</span>
-            <h2>See Our Magic in Motion</h2>
-            <p>A glimpse into our latest and greatest work.</p>
-        </div>
-        <div class="reel-container fade-up">
-            <canvas id="reelCanvas"></canvas>
-            <div class="play-btn">
-                <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
-            </div>
-        </div>
-    </section>
-
     <!-- WORK / PORTFOLIO -->
     <section id="work">
         <div class="section-header fade-up">
@@ -991,61 +1096,39 @@
             <p>Handpicked work that showcases our range and quality.</p>
         </div>
         <div class="work-grid">
-            <div class="work-card fade-up">
+            <div class="work-card" >
                 <div class="work-card-bg">
-                    <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="1"><circle cx="12" cy="12" r="10"/><path d="M8 12l3 3 5-5"/></svg>
+                       <video class="hero-video" autoplay muted loop playsinline preload="auto">
+                      <source src="https://res.cloudinary.com/dqi5wqqeo/video/upload/v1770989847/Unbowed_Sh0010_slate_v01_m9lpl1.mov" type="video/mp4">
+                      <!-- Fallback image if video doesn't load -->
+                      <img src="https://images.unsplash.com/photo-1557683311-973673bafafb?w=1600" alt="Background fallback">
+                    </video>
+
                 </div>
                 <div class="work-card-overlay">
                     <h3>Nebula: Origins</h3>
                     <span>Animated Feature Film</span>
+
                 </div>
+                <div class="button-content">
+                    <iframe
+                      src="https://player.cloudinary.com/embed/?cloud_name=dqi5wqqeo&public_id=Unbowed_Sh0010_slate_v01_m9lpl1"
+                      width="640"
+                      height="360" 
+                      style="height: auto; width: 100%; aspect-ratio: 640 / 360;"
+                      allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
+                      allowfullscreen
+                      frameborder="0"
+                    ></iframe>
+                </div>
+                <button class="close-btn">×</button>
             </div>
-            <div class="work-card fade-up">
-                <div class="work-card-bg">
-                    <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M9 12h6M12 9v6"/></svg>
-                </div>
-                <div class="work-card-overlay">
-                    <h3>AquaPure Brand Film</h3>
-                    <span>Motion Design / Commercial</span>
-                </div>
-            </div>
-            <div class="work-card fade-up">
-                <div class="work-card-bg">
-                    <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="1"><polygon points="12,2 15,9 22,9 16,14 18,21 12,17 6,21 8,14 2,9 9,9"/></svg>
-                </div>
-                <div class="work-card-overlay">
-                    <h3>Crimson Veil</h3>
-                    <span>Game Cinematic Trailer</span>
-                </div>
-            </div>
-            <div class="work-card fade-up">
-                <div class="work-card-bg">
-                    <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="1"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2z"/><path d="M2 12h20"/></svg>
-                </div>
-                <div class="work-card-overlay">
-                    <h3>GlobalTech UI Suite</h3>
-                    <span>UI/UX Animation</span>
-                </div>
-            </div>
-            <div class="work-card fade-up">
-                <div class="work-card-bg">
-                    <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="1"><path d="M12 3L2 12h3v8h6v-5h2v5h6v-8h3L12 3z"/></svg>
-                </div>
-                <div class="work-card-overlay">
-                    <h3>Solaris Music Video</h3>
-                    <span>2D Animation</span>
-                </div>
-            </div>
-            <div class="work-card fade-up">
-                <div class="work-card-bg">
-                    <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="1"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>
-                </div>
-                <div class="work-card-overlay">
-                    <h3>Meta Playground</h3>
-                    <span>Interactive 3D Experience</span>
-                </div>
-            </div>
+            
+
         </div>
+        
+        <!-- Backdrop overlay (shared by all buttons) -->
+        <div class="backdrop" id="backdrop"></div>
     </section>
 
     <!-- PROCESS -->
@@ -1061,89 +1144,12 @@
                 <h3>Discover</h3>
                 <p>We dive deep into your brand, goals, and audience to define the creative direction.</p>
             </div>
-            <div class="step fade-up">
-                <div class="step-number">02</div>
-                <h3>Design</h3>
-                <p>Concept art, storyboards, and styleframes bring the vision into focus before production.</p>
-            </div>
-            <div class="step fade-up">
-                <div class="step-number">03</div>
-                <h3>Animate</h3>
-                <p>Our artists bring every frame to life with meticulous attention to movement and emotion.</p>
-            </div>
-            <div class="step fade-up">
-                <div class="step-number">04</div>
-                <h3>Deliver</h3>
-                <p>Final renders, sound design, and polish — delivered on time and beyond expectations.</p>
-            </div>
+
         </div>
     </section>
 
-    <!-- STATS -->
-    <section class="stats">
-        <div class="stats-grid fade-up">
-            <div class="stat-item">
-                <h3>150+</h3>
-                <p>Projects Delivered</p>
-            </div>
-            <div class="stat-item">
-                <h3>12</h3>
-                <p>Industry Awards</p>
-            </div>
-            <div class="stat-item">
-                <h3>40+</h3>
-                <p>Creative Experts</p>
-            </div>
-            <div class="stat-item">
-                <h3>98%</h3>
-                <p>Client Satisfaction</p>
-            </div>
-        </div>
-    </section>
 
-    <!-- TESTIMONIALS -->
-    <section id="testimonials">
-        <div class="section-header fade-up">
-            <span class="section-tag">Testimonials</span>
-            <h2>What Our Clients Say</h2>
-            <p>Don't just take our word for it — hear from the people we've worked with.</p>
-        </div>
-        <div class="testimonials-grid">
-            <div class="testimonial-card fade-up">
-                <div class="stars">★★★★★</div>
-                <blockquote>"FrameForge transformed our brand story into a visual masterpiece. The team's creativity and professionalism exceeded every expectation we had."</blockquote>
-                <div class="testimonial-author">
-                    <div class="author-avatar">JK</div>
-                    <div class="author-info">
-                        <h4>James Kim</h4>
-                        <span>Creative Director, NovaTech</span>
-                    </div>
-                </div>
-            </div>
-            <div class="testimonial-card fade-up">
-                <div class="stars">★★★★★</div>
-                <blockquote>"Working with FrameForge on our game cinematics was incredible. They understood our world perfectly and delivered breathtaking sequences."</blockquote>
-                <div class="testimonial-author">
-                    <div class="author-avatar">SR</div>
-                    <div class="author-info">
-                        <h4>Sarah Rodriguez</h4>
-                        <span>Producer, Ironclad Studios</span>
-                    </div>
-                </div>
-            </div>
-            <div class="testimonial-card fade-up">
-                <div class="stars">★★★★★</div>
-                <blockquote>"The motion design work they delivered for our product launch drove a 40% increase in engagement. Absolutely world-class quality."</blockquote>
-                <div class="testimonial-author">
-                    <div class="author-avatar">DL</div>
-                    <div class="author-info">
-                        <h4>David Liu</h4>
-                        <span>VP Marketing, StreamWave</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+  
 
     <!-- CTA -->
     <section class="cta-section" id="contact">
@@ -1188,10 +1194,27 @@
         <div class="footer-bottom">
             <p>© 2026 FrameForge Studio. All rights reserved.</p>
             <div class="social-links">
-                <a href="#" title="Twitter">𝕏</a>
-                <a href="#" title="Instagram">IG</a>
-                <a href="#" title="Vimeo">Vi</a>
-                <a href="#" title="LinkedIn">In</a>
+                <a href="#" title="Instagram" class="logo-button">
+                    <svg width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M16 12a4 4 0 1 0-1.172 2.829A3.84 3.84 0 0 0 16 12.06l-.001-.063zm2.16 0a6.135 6.135 0 1 1-1.797-4.359 5.92 5.92 0 0 1 1.798 4.256l-.001.109zm1.687-6.406v.002a1.44 1.44 0 1 1-.422-1.018c.256.251.415.601.415.988v.029-.001zm-7.84-3.44-1.195-.008q-1.086-.008-1.649 0t-1.508.047c-.585.02-1.14.078-1.683.17l.073-.01c-.425.07-.802.17-1.163.303l.043-.014a4.12 4.12 0 0 0-2.272 2.254l-.01.027a6 6 0 0 0-.284 1.083l-.005.037a12 12 0 0 0-.159 1.589l-.001.021q-.039.946-.047 1.508t0 1.649.008 1.195-.008 1.195 0 1.649.047 1.508c.02.585.078 1.14.17 1.683l-.01-.073c.07.425.17.802.303 1.163l-.014-.043a4.12 4.12 0 0 0 2.254 2.272l.027.01c.318.119.695.219 1.083.284l.037.005c.469.082 1.024.14 1.588.159l.021.001q.946.039 1.508.047t1.649 0l1.188-.024 1.195.008q1.086.008 1.649 0t1.508-.047c.585-.02 1.14-.078 1.683-.17l-.073.01c.425-.07.802-.17 1.163-.303l-.043.014a4.12 4.12 0 0 0 2.272-2.254l.01-.027c.119-.318.219-.695.284-1.083l.005-.037c.082-.469.14-1.024.159-1.588l.001-.021q.039-.946.047-1.508t0-1.649-.008-1.195.008-1.195 0-1.649-.047-1.508c-.02-.585-.078-1.14-.17-1.683l.01.073a6.3 6.3 0 0 0-.303-1.163l.014.043a4.12 4.12 0 0 0-2.254-2.272l-.027-.01a6 6 0 0 0-1.083-.284l-.037-.005a12 12 0 0 0-1.588-.159l-.021-.001q-.946-.039-1.508-.047t-1.649 0zM24 12q0 3.578-.08 4.953a6.64 6.64 0 0 1-6.985 6.968l.016.001q-1.375.08-4.953.08t-4.953-.08a6.64 6.64 0 0 1-6.968-6.985l-.001.016q-.08-1.375-.08-4.953t.08-4.953A6.64 6.64 0 0 1 7.061.079L7.045.078q1.375-.08 4.953-.08t4.953.08a6.64 6.64 0 0 1 6.968 6.985l.001-.016Q24 8.421 24 12"/></svg>
+                    
+                </a>
+                
+                
+                <a href="https://www.youtube.com/" title="Youtube" class="logo-button">
+                <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                	 width="16" height="16" viewBox="0 0 95.333 95.333" style="enable-background:new 0 0 95.333 95.333;"
+                	 xml:space="preserve">
+                    <g>
+                	<path  d="M73.104,0H22.228C9.952,0,0,9.952,0,22.228v50.877c0,12.275,9.951,22.228,22.228,22.228h50.875
+                		c12.277,0,22.229-9.952,22.229-22.228V22.228C95.332,9.952,85.381,0,73.104,0z M65.209,52.786
+                		c-9.312,4.825-18.619,9.657-27.896,14.544c-2.105,1.109-4.021,1.062-5.922-0.32c-1.429-1.037-1.947-2.482-1.938-4.21
+                		c0.024-4.964,0.008-9.929,0.007-14.894c0-4.903-0.03-9.806,0.008-14.708c0.039-5.035,3.896-7.409,8.34-5.07
+                		c9.224,4.857,18.406,9.792,27.606,14.694c2.029,1.081,3.543,2.485,3.467,5.041C68.805,50.389,67.255,51.725,65.209,52.786z"/>
+                    </g>
+                </svg>
+                </a>
+                
+                
             </div>
         </div>
     </footer>
@@ -1315,6 +1338,59 @@
 
         const statsGrid = document.querySelector('.stats-grid');
         if (statsGrid) statObserver.observe(statsGrid);
+        
+//---------------------------------------------BUTTON
+        const buttons = document.querySelectorAll('.work-card');
+        const backdrop = document.getElementById('backdrop');
+        let activeButton = null;
+    
+        function toggleExpand(button) {
+          const isExpanded = button.classList.contains('expanded');
+    
+          // Close any open button first
+          if (activeButton && activeButton !== button) {
+            activeButton.classList.remove('expanded');
+          }
+    
+          button.classList.toggle('expanded', !isExpanded);
+          backdrop.classList.toggle('visible', !isExpanded);
+    
+          if (!isExpanded) {
+            activeButton = button;
+            document.body.style.overflow = 'hidden'; // Prevent page scroll
+          } else {
+            activeButton = null;
+            document.body.style.overflow = 'auto';
+          }
+        }
+    
+        // Click on button to expand (if not clicking close)
+        buttons.forEach(button => {
+          button.addEventListener('click', (e) => {
+            if (!button.classList.contains('expanded') && !e.target.classList.contains('close-btn')) {
+              toggleExpand(button);
+            }
+          });
+    
+          // Close button inside each expanded overlay
+          button.querySelector('.close-btn').addEventListener('click', () => {
+            toggleExpand(button);
+          });
+        });
+    
+        // Click backdrop to close
+        backdrop.addEventListener('click', () => {
+          if (activeButton) {
+            toggleExpand(activeButton);
+          }
+        });
+    
+        // ESC key to close
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape' && activeButton) {
+            toggleExpand(activeButton);
+          }
+        });
     </script>
 </body>
 </html>
