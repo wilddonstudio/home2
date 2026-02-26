@@ -4,18 +4,23 @@
             top: 0;
             left: 0;
             width: 100%;
-            z-index: 1000;
+            max-height: 50px;
+            z-index: 1001;
             padding: 1.2rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: rgba(10, 10, 15, 0.7);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(255,255,255,0.04);
+            background: rgba(10, 10, 15, 0);
+            /*backdrop-filter: blur(20px);*/
+            /*border-bottom: 1px solid rgba(255,255,255,0.04);*/
             transition: background 0.3s;
         }
 
         .logo {
+            position:absolute;
+            top:0%;
+            left:20px;
+            transform: translate(0px,0px);
             font-family: 'Space Grotesk', sans-serif;
             font-size: 1.5rem;
             font-weight: 700;
@@ -24,6 +29,7 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
             letter-spacing: -0.5px;
+            z-index:1100;
         }
 
         .logo span {
@@ -35,54 +41,98 @@
             gap: 2rem;
             list-style: none;
             align-items: center;
+            z-index: 1002;
+            box-sizing:border-box;
+
         }
 
         .nav-links a {
-            color: var(--text-secondary);
+            color: var(--text-primary);
             text-decoration: none;
-            font-size: 0.9rem;
+            font-size: 1rem;
             font-weight: 500;
             transition: color 0.3s;
             position: relative;
+            top:12px;
+            background-color: black;
+            border-radius: 20px;
+            padding: 0.6rem 1.5rem;
+            display: inline-block;
+
         }
 
         .nav-links a:hover {
-            color: var(--text-primary);
+            color: var(--text-orange);
         }
 
         .nav-links a::after {
             content: '';
             position: absolute;
-            bottom: -4px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--gradient-1);
-            transition: width 0.3s;
-            border-radius: 2px;
+            width: 100%;
+            height: 100%;
+         padding: 20px;
+            border-radius: 10px;
+            top: 50%;
+            left: 50%;
+
+            transform: translate(-50%,-50%);
+            background: black;
+            transition:  0.3s;
+            z-index:-1;
+
+            
+
+
         }
 
         .nav-links a:hover::after {
-            width: 100%;
+            background-color:var(--text-orange);
         }
 
         .nav-cta {
+            position:absolute;
+            top:12px;
+            right:20px;
             padding: 0.6rem 1.5rem;
-            background: var(--gradient-1);
+            background: var(--text-orange);
             border: none;
             border-radius: 50px;
-            color: #fff;
+            color: black;
+            font-size: 1rem;
             font-weight: 600;
-            font-size: 0.9rem;
             cursor: pointer;
             transition: transform 0.3s, box-shadow 0.3s;
             text-decoration: none;
         }
 
         .nav-cta:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 30px var(--accent-glow);
+            background: black;
+            color:var(--text-orange);
+
         }
+        .nav-cta::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+         padding: 20px;
+            border-radius: 10px;
+            top: 50%;
+            left: 50%;
+
+            transform: translate(-50%,-50%);
+            background: black;
+            transition:  0.3s;
+            z-index:-1;
+
+            
+
+
+        }
+        .nav-cta:hover::after {
+            background-color:var(--text-orange);
+        }
+
 
         .hamburger {
             display: none;
@@ -91,6 +141,9 @@
             cursor: pointer;
             background: none;
             border: none;
+            position:absolute;
+            left:50%;
+            top:30px;
         }
 
         .hamburger span {
@@ -99,4 +152,24 @@
             background: var(--text-primary);
             border-radius: 2px;
             transition: 0.3s;
+        }
+
+        .halftone{
+            display:grid;
+            grid-template-columns: repeat(50,100px);
+            grid-template-rows: 200px;
+            grid-auto-rows:0;
+            width:100%;
+            top:0px;
+            left:0px;
+            overflow:clip;
+            position:fixed;
+            z-index:1000;
+            opacity: 1;
+            transform:translate(0%,-20%);
+        }
+        .halftone img{
+            width:100%;
+            height:100%;
+
         }

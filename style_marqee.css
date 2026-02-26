@@ -1,9 +1,10 @@
         /* ---- CLIENTS / MARQUEE ---- */
         .clients {
             padding: 3rem 0;
-            border-top: 1px solid var(--border);
+           border-top: 1px solid var(--border);
             border-bottom: 1px solid var(--border);
-            overflow: hidden;
+            /*overflow: hidden;*/
+            
         }
 
         .clients-label {
@@ -17,10 +18,26 @@
         }
 
         .marquee {
+
             display: flex;
-            gap: 4rem;
-            animation: marquee 20s linear infinite;
-            width: max-content;
+            width: 100%;
+            gap: 3rem;
+            flex: 0 1 auto;
+           
+            justify-content: center;  
+
+            contain: layout paint;
+            padding:0 4rem;
+            box-sizing:border-box;
+            
+            
+            
+        }
+        .marquee::after{
+            content:"";
+            display: block;
+            clear: both;
+            height:0;
         }
 
         .marquee-item {
@@ -32,46 +49,24 @@
             letter-spacing: -0.5px;
         }
 
+        .marqee-svg{
+            flex: 0 1 auto;
+            max-width:var(--marqee-height);
+            height: auto;
+            width: auto;
+            min-width: var(--marqee-minheight);
+            min-width: 0;
+            min-height: 0;
+            
+
+
+            object-fit: contain;
+            display:block;
+        }
+
         @keyframes marquee {
             0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
+
         }
 
-        /* ---- SECTIONS COMMON ---- */
-        section {
-            padding: 6rem 2rem;
-        }
 
-        .section-header {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-
-        .section-tag {
-            display: inline-block;
-            padding: 0.4rem 1rem;
-            background: rgba(124, 58, 237, 0.12);
-            border: 1px solid rgba(124, 58, 237, 0.2);
-            border-radius: 50px;
-            font-size: 0.8rem;
-            color: var(--accent-light);
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 1rem;
-        }
-
-        .section-header h2 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: clamp(2rem, 4vw, 3rem);
-            font-weight: 700;
-            letter-spacing: -1px;
-            margin-bottom: 1rem;
-        }
-
-        .section-header p {
-            color: var(--text-secondary);
-            font-size: 1.05rem;
-            max-width: 550px;
-            margin: 0 auto;
-        }

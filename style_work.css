@@ -1,0 +1,208 @@
+        /* ---- WORK / PORTFOLIO ---- */
+        .work-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .work-card {
+            position: relative;
+            padding: 20px;
+            border-radius: 20px;
+            overflow: hidden;
+            cursor: pointer;
+            border: 1px solid var(--border);
+            z-index: 1;
+            transition: all 0.5s ease;
+            height: 300px; /* Adjust height for video visibility in compact state */
+            
+            
+        }
+
+        .work-card-bg {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            transition: transform 0.5s;
+            z-index: -1;
+        }
+
+        .work-card:nth-child(1) .work-card-bg { background: linear-gradient(135deg, #1e1b4b, #4c1d95); }
+        .work-card:nth-child(2) .work-card-bg { background: linear-gradient(135deg, #1e3a5f, #0d9488); }
+        .work-card:nth-child(3) .work-card-bg { background: linear-gradient(135deg, #4a1942, #c2185b); }
+        .work-card:nth-child(4) .work-card-bg { background: linear-gradient(135deg, #1b2838, #3b82f6); }
+        .work-card:nth-child(5) .work-card-bg { background: linear-gradient(135deg, #2d1b00, #d97706); }
+        .work-card:nth-child(6) .work-card-bg { background: linear-gradient(135deg, #14302a, #22c55e); }
+
+        .work-card:hover .work-card-bg {
+            transform: scale(1.05);
+        }
+
+        .work-card-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .work-card:hover .work-card-overlay {
+            opacity: 1;
+        }
+
+        .work-card-overlay h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+        }
+
+        .work-card-overlay span {
+            font-size: 0.85rem;
+            color: var(--accent-light);
+        }
+        /* Hidden content (e.g., media player or text) --------------------BUTTON*/
+        .button-content {
+          margin-top: 15px;
+          opacity: 0;
+          transform: scale(0.8);
+          transition: all 0.5s ease;
+          max-height: 0;
+          position: relative;
+          z-index: 1;
+        }
+    
+        /* Expanded state – full-page overlay */
+        .work-card.expanded {
+          position: fixed;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 80vw;
+          max-width: 900px;
+          height: auto;
+          padding: 30px;
+          background: #fff;
+          color: #000;
+          border-radius: 12px;
+          box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+          z-index: 1001;
+        }
+    
+        .work-card.expanded .work-card-bg {
+          opacity: 0; /* Hide label when expanded */
+          pointer-events: none; /* Prevent interaction */
+        }
+        .work-card.expanded .work-card-overlay {
+          opacity: 0; /* Hide label when expanded */
+          pointer-events: none; /* Prevent interaction */
+        }
+    
+        .work-card.expanded .button-content {
+          opacity: 1;
+          transform: scale(1);
+          max-height: 500px; /* Adjust based on content */
+        }
+    
+        /* Close button in expanded mode */
+        .close-btn {
+          position: absolute;
+          top: 15px;
+          right: 20px;
+          background: none;
+          border: none;
+          color: #aaa;
+          font-size: 1.8rem;
+          cursor: pointer;
+          display: none;
+        }
+    
+        .work-card.expanded .close-btn {
+          display: block;
+        }
+    
+        .close-btn:hover {
+          color: #666;
+        }
+    
+        /* Backdrop overlay (dims the page) */
+        .backdrop {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100vw;
+          height: 100vh;
+          background: rgba(0, 0, 0, 0.7);
+          opacity: 0;
+          pointer-events: none;
+          transition: opacity 0.5s ease;
+          z-index: 1000;
+        }
+    
+        .backdrop.visible {
+          opacity: 1;
+          pointer-events: auto;
+        }
+    
+        /* Hover effect (compact state) */
+        .work-card:not(.expanded):hover .work-card-overlay {
+            opacity: 1;
+        }
+    
+        /* Example content styling (video or text) */
+        video {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;           /* or 'contain' if you prefer no cropping */
+          object-position: center;
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+        /* ---- PROCESS ---- */
+        .process-steps {
+            max-width: 900px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            position: relative;
+        }
+
+        .step {
+            text-align: center;
+            position: relative;
+        }
+
+        .step-number {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 3rem;
+            font-weight: 800;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            opacity: 0.4;
+            margin-bottom: 0.8rem;
+        }
+
+        .step h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .step p {
+            color: var(--text-secondary);
+            font-size: 0.88rem;
+            line-height: 1.6;
+        }
