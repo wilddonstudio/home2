@@ -10,9 +10,10 @@
     <link rel="stylesheet" href="style_hero.css">
     <link rel="stylesheet" href="style_marqee.css">
     <link rel="stylesheet" href="style_nav.css">
-    <link rel="stylesheet" href="style_service.css">
+    <link rel="stylesheet" href="style_about.css">
     <link rel="stylesheet" href="style_section.css">
     <link rel="stylesheet" href="style_work.css">
+    <link rel="stylesheet" href="style_workflow.css">
     <link rel="stylesheet" href="style_cta.css">
     <link rel="stylesheet" href="style_footer.css">
     <link rel="stylesheet" href="style_mobile.css">
@@ -79,7 +80,7 @@
         </div>
         <div></div>
         <ul class="nav-links">
-            <li><a href="#services">Services</a></li>
+            <li><a href="#services">About Us</a></li>
             <li><a href="#work">Work</a></li>
             <li><a href="#process">Process</a></li>
             <li><a href="#testimonials">Testimonials</a></li>
@@ -96,8 +97,8 @@
     <!-- MOBILE MENU -->
     <div class="mobile-menu" id="mobileMenu">
         <button class="mobile-close" onclick="toggleMenu()">✕</button>
-        <a href="#services" onclick="toggleMenu()">Services</a>
-        <a href="#work" onclick="toggleMenu()">Work</a>
+        <a href="#services" onclick="toggleMenu()">About Us</a>
+        <a href="#work" onclick="toggleMenu()">Portfolio</a>
         <a href="#process" onclick="toggleMenu()">Process</a>
         <a href="#testimonials" onclick="toggleMenu()">Testimonials</a>
         <!--<a href="#contact" onclick="toggleMenu()">Get in Touch</a>-->
@@ -123,36 +124,56 @@
   </section>
 
     <!-- CLIENTS MARQUEE -->
-    <div class="clients">
-        <div class="clients-label">Clients</div>
-        <!--<div style="overflow:hidden;">-->
-            <div class="marquee">
-                <img src="./SVG/broadway.svg" class="marqee-svg">
-                <img src="./SVG/hktvmall.svg" class="marqee-svg" >
-                <img src="./SVG/UOW-grey.svg" class="marqee-svg">
-                <img src="./SVG/hkedu.svg" class="marqee-svg">
-                <img src=./SVG/sdplus.svg class="marqee-svg">
-                <img src=./SVG/hkcustoms.svg class="marqee-svg">
-                
+<div class="clients">
+    <div class="clients-label fade-up">Clients</div>
+    <!--<div style="overflow:hidden;">-->
+        <div class="marquee">
+            <img src="./SVG/broadway.svg" title= "Broadway" class="marquee-svg fade-up" alt="Broadway">
+            <img src="./SVG/hktvmall.svg" title= "HKTV Mall" class="marquee-svg fade-up" alt="HKTVMall">
+            <img src="./SVG/UOW-grey.svg" title="UOW College" class="marquee-svg fade-up" alt="UOW College">
+            <img src="./SVG/hkedu.svg" title="EdUHK" class="marquee-svg fade-up" alt="EdUHK">
+            <img src=./SVG/sdplus.svg title="PolyU SD Plus" class="marquee-svg fade-up" alt="PolyU SD Plus">
+            <img src=./SVG/hkcustoms.svg title="HK Customs"class="marquee-svg fade-up" alt="HK Customs">
+            
 
 
+        </div>
+    
+        <div class="marquee-grid">
+            <div class="marquee-container">
+                <div class="partner-label">Industry Partners</div>
+                <div class="marquee">
+
+                    <a href="https://latestudio.hk/" target="_blank" rel="noopener noreferrer" >
+                    <img src="./SVG/late_studio.svg" title="Late Studio" class="partner-svg fade-up" alt="Late Studio">     
+                    </a>
+
+                    <a href="https://www.hkjustproduction.com/" target="_blank" rel="noopener noreferrer">
+                    <img src="./SVG/justprod.svg" title="Just Production" class="partner-svg fade-up" alt="Just Production">
+                    </a>
+
+                </div>
             </div>
-        <div class="clients-label">Industry Partners</div>
-        <!--<div style="overflow:hidden;">-->
-            <div class="marquee">
-                <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">
-                <img src="/SVG/broadway.svg" class="marqee-svg">
-                </a>
+            <div class="marquee-container">
+                <div class="partner-label fade-up">Awarded funding</div>
+                <div class="marquee">
 
-                <img src="/SVG/hktvmall.svg" class="marqee-svg" >
-                <img src="/SVG/UOW-grey.svg" class="marqee-svg">
-                <img src="/SVG/hkedu.svg" class="marqee-svg">
-                <img src=/SVG/sdplus.svg class="marqee-svg">
-                <img src=/SVG/hkcustoms.svg class="marqee-svg">
-                
+                    <!--<div class="marquee-empty"></div>-->
 
 
+                    <a href="https://www.animation-ssp.com/zh/" target="_blank" rel="noopener noreferrer" >
+                    <img src="./SVG/asp.svg" title="HK 13th ASP" class="partner-svg fade-up" alt="HK 13th ASP">     
+                    </a>
+
+                    <a href="https://www.hkmu.edu.hk/sao/entrepreneurship/metrochallenge/" target="_blank" rel="noopener noreferrer">
+                    <img src="./SVG/metro.svg" title="HKMU MetroChallenge" class="partner-svg fade-up" alt="HKMU MetroChallenge">
+                    </a>
+
+
+                </div>
             </div>
+            
+        </div>
 
         
     </div>
@@ -160,81 +181,68 @@
     <!-- SERVICES -->
     <section id="services">
         <div class="section-header fade-up">
-            <span class="section-tag">Services</span>
-            <h2>About Us</h2>
-            <p>From concept to final render, we deliver end-to-end animation solutions tailored to your vision.</p>
+            
+            <h2>關於我們</h2>
+            <p>About Us</p>
         </div>
-        <div class="services-grid">
-            <div class="service-card fade-up">
+        <div class="about-grid">
+            <div>            
+                <div class="about-card fade-up">
+                    任童動畫工作室致力於以動畫重塑香港曾引以為傲的動作片。團隊由具電影與廣告實戰經驗的專業動畫師及動作指導組成，成員們參與製作的作品包括
+                </div>
+                <div class="about-card fade-up">
+                    《明日戰記》、《尋秦記》、《守闕者》、《九龍城寨之圍城》、《觸電》、Netflix 《芭比》、Dreamworks 《蓋比的娃娃屋大電影》等等
+                </div>
+                <div class="about-card fade-up">
+                    我們結合電影敘事與先進製作技術，包括3D掃描、動作與面部捕捉，以及電影級合成等流程
+                </div>
+                <div class="about-card fade-up">
+                    我們相信動畫應該有靈魂、有生命，而非流於模板與公式
+                </div>
+                <div class="about-card fade-up">
+                    每一個鏡頭，都是對香港動作美學的延續，並以更大的視野，走向國際舞台
+                </div>
+                <div class="about-card-empty"></div>
+                <div class="about-card fade-up">
+                    At Wild Don Animation Studio, we don’t just produce animation. We bring Hong Kong action to life in digital form
+                </div>
+                <div class="about-card fade-up">
+                    Our team is composed of professional animators and action directors with hands-on experience in film and advertising
+                </div>
+                <div class="about-card fade-up">
+                    Collectively, our members have contributed to productions including Warriors of Future, Back the Past, The Trier of Fact, 
+                    Twilight of the Warriors: Walled In, Good Game, Netflix’s Barbie, and DreamWorks’ Gabby’s Dollhouse: The Movie, among others
+
+                </div>
+                <div class="about-card fade-up">
+                    We combine cinematic storytelling with advanced production techniques, including 3D scanning, motion and facial capturing,
+                    cinematic compositing, etc. Our pipeline is built on Blender as our core engine, with AI integrated as a precision assist tool to 
+                    enhance efficiency while maintaining full creative control
+                </div>
+                <div class="about-card fade-up">
+                    We believe animation should feel alive, not generic
+                </div>
+                <div class="about-card fade-up">
+                    Every frame we craft carries attitude, movement, and the spirit of Hong Kong action cinema, reimagined for a global audience
+                </div>
 
             </div>
-            <div class="service-card fade-up">
-                <div class="service-icon">✏️</div>
-                <h3>2D Animation</h3>
-                <p>Hand-crafted frame-by-frame and digital 2D animation with distinctive character and storytelling depth.</p>
-            </div>
-            <div class="service-card fade-up">
-                <div class="service-icon">🌀</div>
-                <h3>Motion Design</h3>
-                <p>Dynamic motion graphics for brand identities, UI animations, social media, and broadcast design.</p>
-            </div>
-            <div class="service-card fade-up">
-                <div class="service-icon">🎮</div>
-                <h3>Game Animation</h3>
-                <p>Real-time character animation, cinematics, and VFX for AAA and indie game productions.</p>
-            </div>
-            <div class="service-card fade-up">
-                <div class="service-icon">🏗️</div>
-                <h3>Concept & Storyboard</h3>
-                <p>Visual development, concept art, and storyboarding that lays the foundation for compelling narratives.</p>
-            </div>
-            <div class="service-card fade-up">
-                <div class="service-icon">🔮</div>
-                <h3>VFX & Compositing</h3>
-                <p>Seamless visual effects integration, particle systems, and compositing for live action and full CG projects.</p>
-            </div>
+
+
+
         </div>
     </section>
 
     <!-- WORK / PORTFOLIO -->
     <section id="work">
         <div class="section-header fade-up">
-            <span class="section-tag">Portfolio</span>
-            <h2>Featured Projects</h2>
+            
+            <h2>Portfolio</h2>
             <p>Handpicked work that showcases our range and quality.</p>
         </div>
         <div class="work-grid">
-            <div class="work-card" >
-                <div class="work-card-bg">
-                       <video class="hero-video" autoplay muted loop playsinline preload="auto">
-                      <source src=/projects/project1_thumbnail.mp4 type="video/mp4">
-                      <!-- Fallback image if video doesn't load -->
-                      <img src="https://images.unsplash.com/photo-1557683311-973673bafafb?w=1600" alt="Background fallback">
-                    </video>
 
-                </div>
-                <div class="work-card-overlay">
-                    <h3>Nebula: Origins</h3>
-                    <span>Animated Feature Film</span>
-
-                </div>
-                <div class="button-content">
-                    <iframe
-                      src=\projects\project1.mp4
-                      width="640"
-                      height="360" 
-                      style="height: auto; width: 100%; aspect-ratio: 640 / 360;"
-                      allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
-                      allowfullscreen
-                      frameborder="0"
-                    ></iframe>
-                </div>
-                <button class="close-btn">×</button>
-            </div>
-
-
-
-            <div class="work-card" >
+            <div class="work-card fade-up" >
                 <div class="work-card-bg">
                        <video class="video" autoplay muted loop playsinline preload="auto">
                       <source src=/projects/project1_thumbnail.mp4 type="video/mp4">
@@ -249,21 +257,63 @@
 
                 </div>
                 <div class="button-content">
-                    <h3>Nebula: Origins</h3><span>Animated Feature Film</span>
-                    
-                    <iframe
-                      src=\projects\project1.mp4
-                      width="640"
-                      height="360" 
-                      style="height: auto; width: 100%; aspect-ratio: 640 / 360;"
-                      allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
-                      allowfullscreen
-                      frameborder="0"
-                    ></iframe>
+                    <div class="button-text">
+                        <h3>Nebula: Origins</h3>
+                        <span>Animated Feature Film</span>
+                    </div>
+       
+                        <iframe
+                        src=\projects\project1.mp4
+                        width="560"
+                        height="10"
+                        class="work-player";
+                        allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
+                        allowfullscreen
+                        frameborder="0"
+                        ></iframe>
+
+
                 </div>
                 <button class="close-btn">×</button>
             </div>
-            
+
+
+            <div class="work-card fade-up" >
+                <div class="work-card-bg">
+                       <video class="video" autoplay muted loop playsinline preload="auto">
+                      <source src=/projects/project_dandadan.mp4 type="video/mp4">
+                      <!-- Fallback image if video doesn't load -->
+                      <img src="https://images.unsplash.com/photo-1557683311-973673bafafb?w=1600" alt="Background fallback">
+                    </video>
+
+                </div>
+                <div class="work-card-overlay">
+                    <h3>Nebula: Origins</h3>
+                    <span>Animated Feature Film</span>
+
+                </div>
+                <div class="button-content">
+                    <div class="button-text">
+                        <h3>Nebula: Origins</h3>
+                        <h2>Animated Feature Film</h2>
+                    </div>
+                
+                        <iframe
+                        src=\projects\project_dandadan.mp4
+                        id="work-player";
+                        class="work-player";
+
+
+                        width="560"
+                        height="10"
+                        allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
+                        allowfullscreen
+                        frameborder="0"
+                        ></iframe>
+
+                </div>
+                <button class="close-btn">×</button>
+            </div>
 
         </div>
         
@@ -274,15 +324,13 @@
     <!-- PROCESS -->
     <section id="process">
         <div class="section-header fade-up">
-            <span class="section-tag">Process</span>
+
             <h2>How We Work</h2>
             <p>A streamlined creative process that turns your vision into reality.</p>
         </div>
         <div class="process-steps">
             <div class="step fade-up">
-                <div class="step-number">01</div>
-                <h3>Discover</h3>
-                <p>We dive deep into your brand, goals, and audience to define the creative direction.</p>
+                <img src="./workflow.png">;
             </div>
 
         </div>
@@ -312,27 +360,21 @@
             </div>
             <div class="footer-col">
                 <h4>Studio</h4>
-                <a href="#services">Services</a>
+                <a href="#services">About Us</a>
                 <a href="#work">Portfolio</a>
                 <a href="#process">Process</a>
-                <a href="#">Careers</a>
+
             </div>
-            <div class="footer-col">
-                <h4>Resources</h4>
-                <a href="#">Blog</a>
-                <a href="#">Case Studies</a>
-                <a href="#">Press Kit</a>
-                <a href="#">FAQ</a>
-            </div>
+
             <div class="footer-col">
                 <h4>Contact</h4>
                 <a href="mailto:wilddonstudio@gmail.com">wilddonstudio@gmail.com</a>
-                <a href="#">+1 (555) 234-5678</a>
-                <a href="#">Los Angeles, CA</a>
+                <a href="#">+852 6779-2480</a>
+                <a href="#">Kowloon, HK</a>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>© 2026 FrameForge Studio. All rights reserved.</p>
+            <p>© 2026 Wild Don Animation Studio. All rights reserved.</p>
             <div class="social-links">
                 <a href="#" title="Instagram" class="logo-button">
                     <svg width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M16 12a4 4 0 1 0-1.172 2.829A3.84 3.84 0 0 0 16 12.06l-.001-.063zm2.16 0a6.135 6.135 0 1 1-1.797-4.359 5.92 5.92 0 0 1 1.798 4.256l-.001.109zm1.687-6.406v.002a1.44 1.44 0 1 1-.422-1.018c.256.251.415.601.415.988v.029-.001zm-7.84-3.44-1.195-.008q-1.086-.008-1.649 0t-1.508.047c-.585.02-1.14.078-1.683.17l.073-.01c-.425.07-.802.17-1.163.303l.043-.014a4.12 4.12 0 0 0-2.272 2.254l-.01.027a6 6 0 0 0-.284 1.083l-.005.037a12 12 0 0 0-.159 1.589l-.001.021q-.039.946-.047 1.508t0 1.649.008 1.195-.008 1.195 0 1.649.047 1.508c.02.585.078 1.14.17 1.683l-.01-.073c.07.425.17.802.303 1.163l-.014-.043a4.12 4.12 0 0 0 2.254 2.272l.027.01c.318.119.695.219 1.083.284l.037.005c.469.082 1.024.14 1.588.159l.021.001q.946.039 1.508.047t1.649 0l1.188-.024 1.195.008q1.086.008 1.649 0t1.508-.047c.585-.02 1.14-.078 1.683-.17l-.073.01c.425-.07.802-.17 1.163-.303l-.043.014a4.12 4.12 0 0 0 2.272-2.254l.01-.027c.119-.318.219-.695.284-1.083l.005-.037c.082-.469.14-1.024.159-1.588l.001-.021q.039-.946.047-1.508t0-1.649-.008-1.195.008-1.195 0-1.649-.047-1.508c-.02-.585-.078-1.14-.17-1.683l.01.073a6.3 6.3 0 0 0-.303-1.163l.014.043a4.12 4.12 0 0 0-2.254-2.272l-.027-.01a6 6 0 0 0-1.083-.284l-.037-.005a12 12 0 0 0-1.588-.159l-.021-.001q-.946-.039-1.508-.047t-1.649 0zM24 12q0 3.578-.08 4.953a6.64 6.64 0 0 1-6.985 6.968l.016.001q-1.375.08-4.953.08t-4.953-.08a6.64 6.64 0 0 1-6.968-6.985l-.001.016q-.08-1.375-.08-4.953t.08-4.953A6.64 6.64 0 0 1 7.061.079L7.045.078q1.375-.08 4.953-.08t4.953.08a6.64 6.64 0 0 1 6.968 6.985l.001-.016Q24 8.421 24 12"/></svg>

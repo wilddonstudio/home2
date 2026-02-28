@@ -5,6 +5,7 @@
             border-bottom: 1px solid var(--border);
             /*overflow: hidden;*/
             
+            
         }
 
         .clients-label {
@@ -15,6 +16,19 @@
             letter-spacing: 3px;
             font-weight: 600;
             margin-bottom: 2rem;
+
+            border:if(style(--test:1):1px solid yellow; else:none);
+        }
+        .partner-label {
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            margin-top: 2rem;
+            border:if(style(--test:1):1px solid green; else:none);
         }
 
         .marquee {
@@ -22,23 +36,47 @@
             display: flex;
             width: 100%;
             gap: 3rem;
-            flex: 0 1 auto;
-           
+            flex: 0 1 var(--marquee-height);
+            min-width:var(--marquee-minheight);
+            min-height:var(--marquee-minheight);
             justify-content: center;  
 
             contain: layout paint;
             padding:0 4rem;
             box-sizing:border-box;
+            border:if(style(--test:1):1px solid CYAN; else:none);
             
             
             
         }
-        .marquee::after{
-            content:"";
-            display: block;
-            clear: both;
-            height:0;
+
+        .marquee a{
+            position:relative;
+            display: flex;
+            flex: 0 1 var(--partner-height);
+            min-width:var(--partner-minheight);
+            height:auto;
+            border:if(style(--test:1):1px solid green; else:none);
+
+
+            
         }
+
+        
+        .marquee a .partner-svg{
+            flex: 0 1 var(--partner-height);
+            max-width:var(--partner-height);
+            height: auto;
+            width: auto;
+            min-width: var(--partner-minheight);
+
+            object-fit: contain;
+            display:block;
+            border: if(style(--test:1):1px solid red; else:none);
+            transition: 0.3s;
+        }
+
+
 
         .marquee-item {
             font-family: 'Space Grotesk', sans-serif;
@@ -49,19 +87,27 @@
             letter-spacing: -0.5px;
         }
 
-        .marqee-svg{
-            flex: 0 1 auto;
-            max-width:var(--marqee-height);
+        .marquee-svg{
+
+            flex: 0 1 var(--marquee-height);
+            max-width:var(--marquee-height);
             height: auto;
             width: auto;
-            min-width: var(--marqee-minheight);
-            min-width: 0;
-            min-height: 0;
-            
-
-
+            min-width: var(--marquee-minheight);
+            transition: 0.3s;
             object-fit: contain;
             display:block;
+            border: if(style(--test:1):1px solid red; else:none);
+
+        }
+
+        .marquee a .partner-svg:hover {
+         filter: brightness(150%);
+         transform: scale(1.03);
+        }
+        .marquee-svg:hover {
+         filter: brightness(150%);
+
         }
 
         @keyframes marquee {
@@ -69,4 +115,21 @@
 
         }
 
+        .marquee-empty{
+            flex: 0 1 var(--marquee-height);
+            min-width: var(--marquee-minheight);
+            object-fit: contain;
+            display:block;
+            border: if(style(--test:1):1px solid blue; else:none);
+        }
 
+        .marquee-grid{
+            display:grid;
+            grid-template-columns:1fr 1fr;
+            justify-items: center;
+            border: if(style(--test:1):1px solid PURPLE; else:none);
+        }
+        .marquee-container{
+            width:100%;
+            border: if(style(--test:1):1px solid orange; else:none);
+        }

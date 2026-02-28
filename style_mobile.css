@@ -70,8 +70,26 @@
 
             }
 
-            .marqee-svg{
-                width: var(--marqee-minheight);
+            .marquee-svg{
+
+            flex: 0 0 var(--marquee-minheight);
+                
+            }
+            .marquee a{
+                flex: 0 1 auto;
+                flex-wrap: wrap;
+                gap: 1rem;
+                padding: 0;
+                width: var(--marquee-minheight);
+
+            }
+            .marquee a .marquee-svg {
+                flex: 0 0 var(--marquee-minheight);
+                
+            }
+            .marquee-empty{
+                flex: 0 0 0;
+                min-width: 0;       
                 
             }
         }

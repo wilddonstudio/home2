@@ -170,3 +170,36 @@ document.addEventListener('keydown', (e) => {
     toggleExpand(activeButton);
     }
 });
+
+//hover-marquee
+document.querySelectorAll('.image-switch').forEach(link => {
+  const defaultImg = link.querySelector('img');
+  const hoverSrc = link.dataset.hover;
+
+  link.addEventListener('mouseenter', () => {
+    defaultImg.src = hoverSrc;
+  });
+
+  link.addEventListener('mouseleave', () => {
+    defaultImg.src = defaultImg.dataset.default || defaultImg.src; // optional reset
+  });
+});
+
+const iframe = document.getElementById('work-player');
+const wrapper = iframe.parentElement;
+
+iframe.addEventListener('load', () => {
+  // Ask the iframe for its size (only works if the embedded player listens)
+  iframe.contentWindow.postMessage({ type: 'getVideoSize' }, '*');
+});
+
+window.addEventListener('message', (event) => {
+  if (event.source !== iframe.contentWindow) return;
+
+  if (event.data.type === 'videoSize') {
+    const { width, height } = event.data;
+    const ratio = width / height;
+    wrapper.style.aspectRatio = `${width} / ${height}`;
+    console.log(`Dynamic ratio set: ${ratio.toFixed(2)}`);
+  }
+});
