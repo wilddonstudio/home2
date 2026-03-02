@@ -114,6 +114,7 @@
     </video>
 
     <div class="hero-content">
+        
       <h1>Welcome to the Future</h1>
       <p>
         Cinematic motion. Stunning visuals. Zero distractions.<br>
@@ -186,7 +187,7 @@
             <p>About Us</p>
         </div>
         <div class="about-grid">
-            <div>            
+            <div class="about-container">            
                 <div class="about-card fade-up">
                     任童動畫工作室致力於以動畫重塑香港曾引以為傲的動作片。團隊由具電影與廣告實戰經驗的專業動畫師及動作指導組成，成員們參與製作的作品包括
                 </div>
@@ -225,6 +226,7 @@
                 <div class="about-card fade-up">
                     Every frame we craft carries attitude, movement, and the spirit of Hong Kong action cinema, reimagined for a global audience
                 </div>
+                 
 
             </div>
 
@@ -259,19 +261,25 @@
                 <div class="button-content">
                     <div class="button-text">
                         <h3>Nebula: Origins</h3>
-                        <span>Animated Feature Film</span>
+                        <h2>Animated Feature Film</h2>
                     </div>
-       
-                        <iframe
-                        src=\projects\project1.mp4
-                        width="560"
-                        height="10"
-                        class="work-player";
-                        allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
-                        allowfullscreen
-                        frameborder="0"
-                        ></iframe>
-
+                    <div class="info">Waiting for video…</div>
+                    <div class="work-container">
+                        <video
+                        id="work-player"               
+                        class="work-player"
+                        controls                       
+                        preload="metadata"
+                        muted
+                        playsinline
+                        src="projects/project1.mp4"   
+                        title="Dandadan project video"
+                        >
+                        
+                        Your browser does not support the video tag.
+                        </video>
+                     
+                    </div>
 
                 </div>
                 <button class="close-btn">×</button>
@@ -297,20 +305,23 @@
                         <h3>Nebula: Origins</h3>
                         <h2>Animated Feature Film</h2>
                     </div>
-                
-                        <iframe
-                        src=\projects\project_dandadan.mp4
-                        id="work-player";
-                        class="work-player";
-
-
-                        width="560"
-                        height="10"
-                        allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
-                        allowfullscreen
-                        frameborder="0"
-                        ></iframe>
-
+                    <div class="info">Waiting for video…</div>
+                    <div class="work-container">
+                        <video
+                        id="work-player"               
+                        class="work-player"
+                        controls                       
+                        preload="metadata"
+                        muted
+                        playsinline
+                        src="projects/project_dandadan.mp4"   
+                        title="Dandadan project video"
+                        >
+                        
+                        Your browser does not support the video tag.
+                        </video>
+                      
+                    </div>
                 </div>
                 <button class="close-btn">×</button>
             </div>

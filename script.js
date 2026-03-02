@@ -203,3 +203,69 @@ window.addEventListener('message', (event) => {
     console.log(`Dynamic ratio set: ${ratio.toFixed(2)}`);
   }
 });
+
+
+
+// Run once on load + every resize
+function updateVideoDisplay() {
+    const ww = window.innerWidth;
+    const wh = window.innerHeight;
+
+    document.querySelectorAll('.work-container').forEach(block => {
+        const video = block.querySelector('.work-player');
+        const info  = block.querySelector('.info');
+
+        if (!video || !info) return;
+
+        let text = `Window: ${ww} × ${wh}px`;
+
+        // Only proceed if video metadata is available
+        if (video.readyState >= 1 && video.videoWidth > 0) {
+            const origW = video.videoWidth;
+            const origH = video.videoHeight;
+            const aspect = origW / origH;
+
+            let displayW, displayH;
+
+            if (origW >= origH) {
+                // Landscape or square → width-limited
+                displayW = ww * 0.75;
+                displayH = displayW / aspect;   // preserve original aspect
+            } else {
+                // Portrait → height-limited
+                displayH = wh * 0.7;
+                displayW = displayH * aspect;
+            }
+
+            text += `  •  Video: ${origW} × ${origH}  (aspect: ${aspect.toFixed(3)})`;
+            text += `  •  Display: ${Math.round(displayW)} × ${Math.round(displayH)} px`;
+
+            // Set CSS variables
+            block.style.setProperty('--video-w',      `${Math.round(displayW)}px`);
+            block.style.setProperty('--video-h',      `${Math.round(displayH)}px`);
+            block.style.setProperty('--video-aspect', `${origW}/${origH}`);      // ← original aspect, usually what you want
+            block.style.setProperty('--is-landscape', origW >= origH ? '1' : '0');
+
+        } else {
+            text += "  •  Video metadata not loaded yet";
+        }
+
+        info.textContent = text;
+    });
+}
+
+// ────────────────────────────────────────────────
+// Attach listeners
+window.addEventListener('resize', updateVideoDisplay);
+window.addEventListener('load',   updateVideoDisplay);
+
+// Also update when each video actually loads metadata (important!)
+document.querySelectorAll('.fullscreen-wrapper').forEach(block => {
+    const video = block.querySelector('.work-player');
+    if (video) {
+        video.addEventListener('loadedmetadata', updateVideoDisplay);
+        video.addEventListener('canplay',        updateVideoDisplay); // sometimes helps
+    }
+});
+
+

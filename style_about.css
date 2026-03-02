@@ -2,18 +2,22 @@
         .about-grid {
           margin-top:2rem;
           position:relative;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
+          justify-content: center;
+            /*display: grid;
+            grid-template-columns: 1fr 1fr;*/
+          justify-items: center;
 
         }
 
         .about-card {
-
+justify-items: center;
+justify-content: center;
             padding: 0.5rem;
             transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
             position: relative;
             overflow: hidden;
             transition:0.3s;
+            text-align: center;
 
         }
 
@@ -23,7 +27,12 @@
         .about-card-empty {
         height:2rem;
         }
+.about-container{
 
+justify-items: center;
+justify-content: center;
+width:40vw;
+}
 
         .about-icon {
             width: 56px;

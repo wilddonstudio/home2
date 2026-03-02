@@ -11,13 +11,13 @@
             --marquee-minheight:60px;
             --partner-height:150px;
             --partner-minheight:50px;
-            --bg-dark: black;
+            --bg-dark: #070707;
             --bg-card: #12121a;
             --accent: #FFA500;
             --accent-light: #FFA500;
             --accent-glow: #FFA500;
             --text-primary: #f0f0f0;
-            --text-secondary: #a7a7a7;
+            --text-secondary: #d0d0d0;
             --text-orange: #FFA500;
             --border: #1e1e2e;
             --gradient-1: linear-gradient(135deg, #00ff77, #ff0088);
