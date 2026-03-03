@@ -113,8 +113,8 @@
           top: 50%;
           left: 50%;
           transform: translate(-50%, -50%);
-display:flex;
-max-height:90%;
+/*display:flex;*/
+height:auto;
 object-fit: contain;
           background: var(--bg-card);
           border-radius: 12px;
@@ -129,7 +129,7 @@ object-fit: contain;
           
           justify-items: center;
           justify-content: center;
-          border: if(style(--test:1):1px solid yellow; else:none);
+          
 
         }
     
@@ -146,22 +146,24 @@ object-fit: contain;
     
         .work-card.expanded .button-content {
           position:relative;
-
+display: flex;
+flex:0 1 auto;
           justify-items: center;
           opacity: 1;
           transform: scale(1);
           width:auto;
-          height:auto;
+          height:calc(var(--video-h)+1000px);
 
 
           top: 15px;
-          bottom:15px;
+
+          border: if(style(--test:1):1px solid yellow; else:none);
         }
 
         .work-card.expanded .work-player {
           position: relative;
-          width:100%;
-          height:100%;
+          width:var(--video-w);
+          height:var(--video-h);
           background: none;*/
           justify-content: center;
           justify-items: center;
@@ -230,7 +232,7 @@ object-fit: contain;
       justify-content: center;
       justify-item: center;
       color: white;
-      background: rgba(0,0,0,0.6);
+      opacity: 0;
       padding: 8px 12px;
       border-radius: 6px;
       font-family: sans-serif;
@@ -240,10 +242,14 @@ object-fit: contain;
       position: relative;
       top:80px;
       width: var(--video-w);
-      height: var(--video-h);
+      height: calc(var(--video-h));
       justify-content: center;
       justify-item: center;
-      border: if(style(--test:1):1px solid white; else:none);
+
       
+    }
+
+    .work-empty{
+      height:100px;
     }
 
