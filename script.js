@@ -120,6 +120,7 @@ if (statsGrid) statObserver.observe(statsGrid);
 
 //---------------------------------------------BUTTON
 const buttons = document.querySelectorAll('.work-card');
+const buttons2 = document.querySelectorAll('.work-card-y');
 const backdrop = document.getElementById('backdrop');
 let activeButton = null;
 
@@ -145,6 +146,19 @@ function toggleExpand(button) {
 
 // Click on button to expand (if not clicking close)
 buttons.forEach(button => {
+    button.addEventListener('click', (e) => {
+    if (!button.classList.contains('expanded') && !e.target.classList.contains('close-btn')) {
+        toggleExpand(button);
+    }
+    });
+
+    // Close button inside each expanded overlay
+    button.querySelector('.close-btn').addEventListener('click', () => {
+    toggleExpand(button);
+    });
+});
+
+buttons2.forEach(button => {
     button.addEventListener('click', (e) => {
     if (!button.classList.contains('expanded') && !e.target.classList.contains('close-btn')) {
         toggleExpand(button);
@@ -229,7 +243,7 @@ function updateVideoDisplay() {
 
             if (origW >= origH) {
                 // Landscape or square → width-limited
-                displayW = ww * 0.75;
+                displayW = ww * 0.7;
                 displayH = displayW / aspect;   // preserve original aspect
             } else {
                 // Portrait → height-limited

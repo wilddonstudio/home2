@@ -46,4 +46,23 @@
             opacity: 1;
             transform: translateY(0);
         }
-        
+
+                /* Chrome / Edge / Safari / Opera */
+        ::-webkit-scrollbar {
+        width: 10px;
+        height: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+        background: var(--bg-card);      /* gray-900 */
+        }
+
+        ::-webkit-scrollbar-thumb {
+        background: #a7a7a7;      /* gray-600 */
+        border-radius: 9999px;
+        border: 3px solid #111827;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+        background: var(--text-orange);      /* gray-500 */
+        }

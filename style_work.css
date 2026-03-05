@@ -1,255 +1,276 @@
-        /* ---- WORK / PORTFOLIO ---- */
-        .work-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+/* ---- WORK / PORTFOLIO ---- */
+.work-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
 
-        .work-card {
-            position: relative;
-            padding: 20px;
-            border-radius: 20px;
-            overflow: hidden;
-            cursor: pointer;
-            border: 1px solid var(--border);
-            z-index: 1;
-            transition: all 0.5s ease;
-            height: 300px; /* Adjust height for video visibility in compact state */
-        }
+.work-card, .work-card-y {
+    position: relative;
 
-        .work-card-bg {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 4rem;
-            transition: transform 0.5s;
-            z-index: -1;
-        }
-/*
-        .work-card:nth-child(1) .work-card-bg { background: linear-gradient(135deg, #1e1b4b, #4c1d95); }
-        .work-card:nth-child(2) .work-card-bg { background: linear-gradient(135deg, #1e3a5f, #0d9488); }
-        .work-card:nth-child(3) .work-card-bg { background: linear-gradient(135deg, #4a1942, #c2185b); }
-        .work-card:nth-child(4) .work-card-bg { background: linear-gradient(135deg, #1b2838, #3b82f6); }
-        .work-card:nth-child(5) .work-card-bg { background: linear-gradient(135deg, #2d1b00, #d97706); }
-        .work-card:nth-child(6) .work-card-bg { background: linear-gradient(135deg, #14302a, #22c55e); }
+    border-radius: 20px;
+    cursor: pointer;
+    border: 1px solid var(--border);
+    z-index: 1;
+    transition: all 0.5s ease;
+    height: 300px; /* Adjust height for video visibility in compact state */
+}
 
-        .work-card:hover .work-card-bg {
-            transform: scale(1.05);
-        }*/
+.work-card-bg {
+  position:relative;
 
-        .work-card-overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
-            padding: 1.5rem;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            opacity: 0;
-            transition: opacity 0.3s;
-            border: if(style(--test:1):2px solid cyan; else:none);
-        }
-        .work-card:hover  {
-            transform: scale(1.03);
-            border: 3px solid var(--text-orange);
-        }
-        .work-card:hover .work-card-overlay {
-            opacity: 1;
-        }
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    justify-item: center;
+    font-size: 4rem;
+    transition: transform 0.5s;
+    z-index: -1;
+    border: if(style(--test:1):2px solid red; else:none);
+}
 
-        .work-card-overlay h3 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin-bottom: 0.3rem;
-            color: var(--text-primary);
-        }
+.video {
 
-        .work-card-overlay span {
-            font-size: 0.85rem;
-            color: var(--text-orange);
-        }
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  top:50%;
+  left:50%;
+transform: translate(-50%,-50%);
 
-        .work-card.expanded .button-text h3 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin-bottom: 0.3rem;
-            text-align: center;
-            color: var(--text-primary);
-        }
 
-        .work-card.expanded .button-text h2 {
-            font-size: 0.85rem;
-            color: var(--text-orange);
-            text-align: center;
-        }
+  border: if(style(--test:1):1px solid white; else:none);
+}
 
-        /* Hidden content (e.g., media player or text) --------------------BUTTON*/
-        .button-content {
-          position:relative;
+.work-card-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    opacity: 0;
+    transition: opacity 0.3s;
+    border: if(style(--test:1):2px solid cyan; else:none);
+}
+.work-card:hover,  .work-card-y:hover {
+    transform: scale(1.03);
+    border: 3px solid var(--text-orange);
+}
+.work-card:hover .work-card-overlay ,.work-card-y:hover .work-card-overlay {
+    opacity: 1;
+}
 
-          height:auto;
-          width:auto;
-          opacity: 0;
-          transform: scale(0.8);
-          transition: all 0.5s ease;
+.work-card-overlay h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+    color: var(--text-primary);
+}
+
+.work-card-overlay span {
+    font-size: 0.85rem;
+    color: var(--text-orange);
+}
+
+/* Example content styling (video or text) */
+
+
+
+
+
+.work-card.expanded .button-text h3,.work-card-y.expanded .button-text h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+    text-align: center;
+    color: var(--text-primary);
+}
+
+.work-card.expanded .button-text h2 , .work-card-y.expanded .button-text h2{
+    font-size: 0.85rem;
+    color: var(--text-orange);
+    text-align: center;
+}
+
+/* Hidden content (e.g., media player or text) --------------------BUTTON*/
+.button-content {
+  position:relative;
+  height:auto;
+  width:auto;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: all 0.5s ease;
   justify-content: center;
 
-          z-index: 1;
+  z-index: 1;
 
-          border: if(style(--test:1):1px solid green; else:none);
-        }
-    
-        /* Expanded state – full-page overlay */
-        .work-card.expanded {
+  border: if(style(--test:1):1px solid green; else:none);
+}
 
-          justify-items: center;
-          position: fixed;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-/*display:flex;*/
-height:auto;
-object-fit: contain;
-          background: var(--bg-card);
-          border-radius: 12px;
-          box-shadow: 0 10px 100px rgba(from var(--text-orange) r g b / 0.25);
-          z-index: 1201;
-          border: if(style(--test:1):1px solid red; else:none);
-        }
+/* Expanded state – full-page overlay */
+.work-card.expanded,.work-card-y.expanded {
+    padding:12px;
+  justify-items: center;
+  position: fixed;
+  top:5%;
+  left: 50%;
+  transform: translateX(-50%);
+  height:auto;
+  max-height:90vh;
+  object-fit: contain;
+  background: var(--bg-card);
+  border-radius: 12px;
+  box-shadow: 0 10px 100px rgba(from var(--text-orange) r g b / 0.25);
+  z-index: 1201;
+  border: if(style(--test:1):1px solid red; else:none);
 
-        .button-text{
-          position:absolute;
-          top:0;
-          
-          justify-items: center;
-          justify-content: center;
-          
+}
 
-        }
-    
-        .work-card.expanded .work-card-bg {
-          opacity: 0; /* Hide label when expanded */
-          pointer-events: none; /* Prevent interaction */
-          position:absolute;
-        }
-        .work-card.expanded .work-card-overlay {
-          opacity: 0; /* Hide label when expanded */
-          pointer-events: none; /* Prevent interaction */
-          position:absolute;
-        }
-    
-        .work-card.expanded .button-content {
-          position:relative;
-display: flex;
-flex:0 1 auto;
-          justify-items: center;
-          opacity: 1;
-          transform: scale(1);
-          width:auto;
-          height:calc(var(--video-h)+1000px);
+.work-card-y.expanded {
+  object-fit: cover;
+  overflow-y:auto;
+}
+
+.button-text{
+  position:absolute;
+  top:0;
+  
+  justify-items: center;
+  justify-content: center;
+  
+
+}
+
+.work-card.expanded .work-card-bg, .work-card-y.expanded .work-card-bg {
+  opacity: 0; /* Hide label when expanded */
+  pointer-events: none; /* Prevent interaction */
+  position:absolute;
+}
+.work-card.expanded .work-card-overlay, .work-card-y.expanded .work-card-overlay {
+  opacity: 0; /* Hide label when expanded */
+  pointer-events: none; /* Prevent interaction */
+  position:absolute;
+}
+
+.work-card.expanded .button-content, .work-card-y.expanded .button-content {
+  position:relative;
+  display: flex;
+  flex:0 1 auto;
+  justify-items: center;
+  opacity: 1;
+  transform: scale(1);
+  overflow-y:auto
+  width:auto;
+  top: 15px;
+  border: if(style(--test:1):1px solid yellow; else:none);
+}
+
+.work-card.expanded .work-player {
+  position: relative;
+  width:var(--video-w);
+  height:var(--video-h);
+  background: none;*/
+  justify-content: center;
+  justify-items: center;
+  /*border:if(style(--test:1):1px solid cyan; else:none);*/
+}
 
 
-          top: 15px;
+/* Close button in expanded mode */
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 1.8rem;
+  cursor: pointer;
+  display: none;
+}
 
-          border: if(style(--test:1):1px solid yellow; else:none);
-        }
+.work-card.expanded .close-btn, .work-card-y.expanded .close-btn {
+  display: block;
+}
 
-        .work-card.expanded .work-player {
-          position: relative;
-          width:var(--video-w);
-          height:var(--video-h);
-          background: none;*/
-          justify-content: center;
-          justify-items: center;
-          /*border:if(style(--test:1):1px solid cyan; else:none);*/
-        }
+.close-btn:hover {
+  color: var(--text-orange);
+}
+
+/* Backdrop overlay (dims the page) */
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+  z-index: 1200;
+}
+
+.backdrop.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Hover effect (compact state) */
+.work-card:not(.expanded):hover .work-card-overlay, .work-card-y:not(.expanded):hover .work-card-overlay {
+    opacity: 1;
+}
 
 
-        /* Close button in expanded mode */
-        .close-btn {
-          position: absolute;
-          top: 15px;
-          right: 20px;
-          background: none;
-          border: none;
-          color: var(--text-secondary);
-          font-size: 1.8rem;
-          cursor: pointer;
-          display: none;
-        }
-    
-        .work-card.expanded .close-btn {
-          display: block;
-        }
-    
-        .close-btn:hover {
-          color: var(--text-orange);
-        }
-    
-        /* Backdrop overlay (dims the page) */
-        .backdrop {
-          position: fixed;
-          top: 0;
-          left: 0;
-          width: 100vw;
-          height: 100vh;
-          background: rgba(0, 0, 0, 0.7);
-          opacity: 0;
-          pointer-events: none;
-          transition: opacity 0.5s ease;
-          z-index: 1200;
-        }
-    
-        .backdrop.visible {
-          opacity: 1;
-          pointer-events: auto;
-        }
-    
-        /* Hover effect (compact state) */
-        .work-card:not(.expanded):hover .work-card-overlay {
-            opacity: 1;
-        }
-    
-        /* Example content styling (video or text) */
-        video {
-          position: absolute;
-          width: 100%;
-          height: 100%;
 
-          object-fit: cover;           /* or 'contain' if you prefer no cropping */
-          object-position: center;
-          /*border: if(style(--test:1):1px solid red; else:none);*/
-        }
+.info {
+  position: relative;
+  justify-content: center;
+  justify-item: center;
+  color: white;
+  opacity: 0;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-family: sans-serif;
+  z-index: 10;
+}
+  .work-container {
+  position: relative;
+  top:80px;
+  width: var(--video-w);
+  height: var(--video-h);
+  justify-content: center;
+  justify-item: center;
 
-    .info {
-      position: relative;
-      justify-content: center;
-      justify-item: center;
-      color: white;
-      opacity: 0;
-      padding: 8px 12px;
-      border-radius: 6px;
-      font-family: sans-serif;
-      z-index: 10;
-    }
-      .work-container {
-      position: relative;
-      top:80px;
-      width: var(--video-w);
-      height: calc(var(--video-h));
-      justify-content: center;
-      justify-item: center;
+  
+}
 
-      
-    }
+.work-empty{
+  height:100px;
+}
 
-    .work-empty{
-      height:100px;
-    }
+.work-subgrid{
+  width: 70vw;
+  position:relative;
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  top:80px;
+  gap:10px;
+  overflow:visible;
+  
+
+}
+
+.work-image{
+  width:100%;
+  border-radius: 12px;
+}
 
