@@ -6,6 +6,9 @@
     <title>Wild Don Animation Studio</title>
     <link rel="icon" href="./favicon.svg" type="image/svg+xml">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Inline:opsz,wght@10..72,100..900&family=Big+Shoulders+Stencil:opsz,wght@10..72,100..900&family=Black+Ops+One&family=Bruno+Ace+SC&family=Bungee+Hairline&family=Doto:wght@100..900&family=Faster+One&family=Geo:ital@0;1&family=Gruppo&family=Orbitron:wght@400..900&family=Rubik+80s+Fade&family=Rubik+Glitch&family=Saira+Stencil+One&family=Sixtyfour&family=Turret+Road:wght@200;300;400;500;700;800&family=Wire+One&family=Zen+Dots&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="style_hero.css">
     <link rel="stylesheet" href="style_marqee.css">
@@ -74,8 +77,10 @@
     <nav>
 
         <div class="logo">
+            <a href="#"  >
             <img src=./SVG/logo_hero.svg
                 	 height=180 width=auto>
+            </a>
 
         </div>
         <div></div>
@@ -83,7 +88,7 @@
             <li><a href="#services">About Us</a></li>
             <li><a href="#work">Work</a></li>
             <li><a href="#process">Process</a></li>
-            <!--<li><a href="#contact" class="nav-cta">Get in Touch</a></li>-->
+            
         </ul>
         <div>
             <a href="#contact" class="nav-cta">Get in Touch</a>
@@ -113,12 +118,7 @@
     </video>
 
     <div class="hero-content">
-        
-      <h1>Welcome to the Future</h1>
-      <p>
-        Cinematic motion. Stunning visuals. Zero distractions.<br>
-        Just pure video energy behind your message.
-      </p>
+      <h1>HONG KONG <br>IN ACTION</h1>
       <!--<a href="#" class="btn">Get Started</a>-->
     </div>
   </section>
@@ -134,8 +134,6 @@
             <img src="./SVG/hkedu.svg" title="EdUHK" class="marquee-svg fade-up" alt="EdUHK">
             <img src=./SVG/sdplus.svg title="PolyU SD Plus" class="marquee-svg fade-up" alt="PolyU SD Plus">
             <img src=./SVG/hkcustoms.svg title="HK Customs"class="marquee-svg fade-up" alt="HK Customs">
-            
-
 
         </div>
     
@@ -214,14 +212,14 @@
     <section id="work">
         <div class="section-header fade-up">
             
-            <h2>Portfolio</h2>
+            <h2>Work</h2>
             <p>作品</p>
         </div>
         <div class="work-grid">
 
             <div class="work-card-y fade-up" >
                 <div class="work-card-bg">
-                      <img src="./projects/project_unbowed/thumbnail.jpg" class="video" alt="Background fallback">
+                      <img src="./projects/project_unbowed/project_unbowed_thumbnail.png" class="video" alt="Background fallback">
                     
 
                 </div>
@@ -248,24 +246,24 @@
 
                 </div>
                 <button class="close-btn">×</button>
-                <div class="work-empty"></div>
+                
             </div>
 
             <!--HKTVMALL-->
             <div class="work-card fade-up" >
                 <div class="work-card-bg">
-                      <img src="./projects/project_hktvmall/Shrimp_MTR.png" class="video" alt="Background fallback">
+                      <img src="./projects/project_hktvmall/project_hktvmall_thumbnail.png" class="video" alt="Background fallback">
                     
 
                 </div>
                 <div class="work-card-overlay">
-                    <h3>HKTVMall MTR Billboard Advert. 港鐵月台廣告</h3>
+                    <h3>HKTVMall MTR Billboard Advert 港鐵月台廣告</h3>
                     <span>Character Modelling 人物製作</span>
 
                 </div>
                 <div class="button-content">
                     <div class="button-text">
-                        <h3>HKTVMall MTR Billboard Advert. 港鐵月台廣告</h3>
+                        <h3>HKTVMall MTR Billboard Advert 港鐵月台廣告</h3>
                         <h2>Character Modelling 人物製作</h2>
                     </div>
                     
@@ -288,8 +286,47 @@
                     
                 </div>
                 <button class="close-btn">×</button>
-                <div class="work-empty"></div>
+                
             </div>
+
+            <!--broadway-->
+            <div class="work-card fade-up" >
+                <div class="work-card-bg">
+                    <img src=./projects/project_broadway/project_broadway_thumbnail.png class="video" alt="Background fallback">
+                </div>
+                <div class="work-card-overlay">
+                    <h3>Broadway Cinema Opening Sequence 百老匯開場動畫</h3>
+                    <span>Character Animation 人物動畫</span>
+
+                </div>
+                <div class="button-content">
+                    <div class="button-text">
+                        <h3>Broadway Cinema Opening Sequence 百老匯開場動畫</h3>
+                        <h2>Character Animation 人物動畫</h2>
+                    </div>
+                    
+                    <div class="work-container">
+                        <video
+                        id="work-player"               
+                        class="work-player"
+                        controls                       
+                        preload="metadata"
+                        muted
+                        playsinline
+                        src="./projects/project_broadway/broadway.mp4"   
+                        title="Dandadan project video"
+                        >
+                        
+                        Your browser does not support the video tag.
+                        </video>
+                      <div class="info">Waiting for video…</div>
+                    </div>
+                    
+                </div>
+                <button class="close-btn">×</button>
+                
+            </div>
+
 
             <!--UOW-->
             <div class="work-card-y fade-up" >
@@ -299,13 +336,13 @@
 
                 </div>
                 <div class="work-card-overlay">
-                    <h3>UOW College Advert. 廣告</h3>
+                    <h3>UOW College Advert 廣告</h3>
                     <span>Environment Asset 環境製作</span>
 
                 </div>
                 <div class="button-content">
                     <div class="button-text">
-                        <h3>UOW College Advert. 廣告</h3>
+                        <h3>UOW College Advert 廣告</h3>
                         <h2>Environment Asset 環境製作</h2>
                     </div>
                     
@@ -320,17 +357,17 @@
 
                 </div>
                 <button class="close-btn">×</button>
-                <div class="work-empty"></div>
+                
             </div>
 
             <!--ansonbean-->
             <div class="work-card fade-up" >
                 <div class="work-card-bg">
-                       <video class="video" autoplay muted loop playsinline preload="auto">
+                       <!--<video class="video" autoplay muted loop playsinline preload="auto">
                       <source src="./projects/project_ansonbean/ansonbean.mp4" type="video/mp4">
-                      <!-- Fallback image if video doesn't load -->
                       <img src="https://images.unsplash.com/photo-1557683311-973673bafafb?w=1600" alt="Background fallback">
-                    </video>
+                    </video>-->
+                    <img src=./projects/project_ansonbean/project_ansonbean_thumbnail.png class="video" alt="Background fallback">
                 </div>
                 <div class="work-card-overlay">
                     <h3>Good Game觸電 Instagram Promo</h3>
@@ -351,7 +388,7 @@
                         preload="metadata"
                         muted
                         playsinline
-                        src="./projects/project_ansonbean/ansonbean.mp4"   
+                        src="./projects/project_ansonbean/ansonbean_v.mp4"   
                         title="Dandadan project video"
                         >
                         
@@ -362,17 +399,13 @@
                     
                 </div>
                 <button class="close-btn">×</button>
-                <div class="work-empty"></div>
+                
             </div>
 
             <!--brucelee-->
             <div class="work-card fade-up" >
                 <div class="work-card-bg">
-                      <video class="video" autoplay muted loop playsinline preload="auto">
-                      <source src=./projects/project_brucelee/brucelee.mp4 type="video/mp4">
-                      <!-- Fallback image if video doesn't load -->
-                      <img src="https://images.unsplash.com/photo-1557683311-973673bafafb?w=1600" alt="Background fallback">
-                    </video>
+                    <img src=./projects/project_brucelee/project_brucelee_thumbnail.png class="video" alt="Background fallback">
                 </div>
                 <div class="work-card-overlay">
                     <h3>Bruce Lee Action Scene 李小龍功夫片段</h3>
@@ -393,7 +426,7 @@
                         preload="metadata"
                         muted
                         playsinline
-                        src="./projects/project_brucelee/brucelee.mp4"   
+                        src="./projects/project_brucelee/brucelee_v.mp4"   
                         title="Dandadan project video"
                         >
                         
@@ -404,17 +437,13 @@
                     
                 </div>
                 <button class="close-btn">×</button>
-                <div class="work-empty"></div>
+                
             </div>
 
             <!--Dandadan-->
             <div class="work-card fade-up" >
                 <div class="work-card-bg">
-                       <video class="video" autoplay muted loop playsinline preload="auto">
-                      <source src=./projects/project_dandadan/project_dandadan.mp4 type="video/mp4">
-                      <!-- Fallback image if video doesn't load -->
-                      <img src="https://images.unsplash.com/photo-1557683311-973673bafafb?w=1600" alt="Background fallback">
-                    </video>
+                    <img src=./projects/project_dandadan/project_dandadan_thumbnail.png class="video" alt="Background fallback">
 
                 </div>
                 <div class="work-card-overlay">
@@ -447,7 +476,7 @@
                     
                 </div>
                 <button class="close-btn">×</button>
-                <div class="work-empty"></div>
+                
             </div>
         <!--end of work-->
         </div>
@@ -460,7 +489,7 @@
     <section id="process">
         <div class="section-header fade-up">
 
-            <h2>Workflow</h2>
+            <h2>Process</h2>
             <p>流程</p>
         </div>
         <div class="workflow">
@@ -475,68 +504,159 @@
 
     <!-- CTA -->
     <section class="cta-section" id="contact">
-        <div class="cta-box fade-up">
-            <h2>Ready to Create Something <span class="gradient-text">Extraordinary</span>?</h2>
-            <p>Let's collaborate and bring your next project to life with stunning animation.</p>
-            <a href="mailto:wilddonstudio@gmail.com" class="btn-primary">
-                Let's Talk
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </a>
+        <div class="section-header fade-up">
+
+            <h2>Get in Touch</h2>
+            <p>聯繫我們</p>
         </div>
+        <div class="cta-grid">
+            <!--WDStudio-->
+            <div class="cta-subgrid">
+                <div class = "cta-profilepic fade-up">
+                    <img src=./Logo_white.png class="video" alt="Background fallback">
+                </div>
+                <div class="cta-box fade-up">
+                    <h2>Wild Don Animation Studio</h2>
+                    <p>hello@wilddonstudio.hk</p>
+                    <p>+852 6779-2480</p>
+                    <p>Kowloon, Hong Kong</p>
+
+
+                    <div class="social-links">
+                        <!--instagram-->
+                        <a href="https://www.instagram.com/wdstudio.hk?igsh=enl1aDc4OTV1a2w=" title="Instagram" class="logo-button" target="_blank" rel="noopener noreferrer">
+                            <svg width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16 12a4 4 0 1 0-1.172 2.829A3.84 3.84 0 0 0 16 12.06l-.001-.063zm2.16 0a6.135 6.135 0 1 1-1.797-4.359 5.92 5.92 0 0 1 1.798 4.256l-.001.109zm1.687-6.406v.002a1.44 1.44 0 1 1-.422-1.018c.256.251.415.601.415.988v.029-.001zm-7.84-3.44-1.195-.008q-1.086-.008-1.649 0t-1.508.047c-.585.02-1.14.078-1.683.17l.073-.01c-.425.07-.802.17-1.163.303l.043-.014a4.12 4.12 0 0 0-2.272 2.254l-.01.027a6 6 0 0 0-.284 1.083l-.005.037a12 12 0 0 0-.159 1.589l-.001.021q-.039.946-.047 1.508t0 1.649.008 1.195-.008 1.195 0 1.649.047 1.508c.02.585.078 1.14.17 1.683l-.01-.073c.07.425.17.802.303 1.163l-.014-.043a4.12 4.12 0 0 0 2.254 2.272l.027.01c.318.119.695.219 1.083.284l.037.005c.469.082 1.024.14 1.588.159l.021.001q.946.039 1.508.047t1.649 0l1.188-.024 1.195.008q1.086.008 1.649 0t1.508-.047c.585-.02 1.14-.078 1.683-.17l-.073.01c.425-.07.802-.17 1.163-.303l-.043.014a4.12 4.12 0 0 0 2.272-2.254l.01-.027c.119-.318.219-.695.284-1.083l.005-.037c.082-.469.14-1.024.159-1.588l.001-.021q.039-.946.047-1.508t0-1.649-.008-1.195.008-1.195 0-1.649-.047-1.508c-.02-.585-.078-1.14-.17-1.683l.01.073a6.3 6.3 0 0 0-.303-1.163l.014.043a4.12 4.12 0 0 0-2.254-2.272l-.027-.01a6 6 0 0 0-1.083-.284l-.037-.005a12 12 0 0 0-1.588-.159l-.021-.001q-.946-.039-1.508-.047t-1.649 0zM24 12q0 3.578-.08 4.953a6.64 6.64 0 0 1-6.985 6.968l.016.001q-1.375.08-4.953.08t-4.953-.08a6.64 6.64 0 0 1-6.968-6.985l-.001.016q-.08-1.375-.08-4.953t.08-4.953A6.64 6.64 0 0 1 7.061.079L7.045.078q1.375-.08 4.953-.08t4.953.08a6.64 6.64 0 0 1 6.968 6.985l.001-.016Q24 8.421 24 12"/></svg>
+                            
+                        </a>
+                        
+                        <!--linkedin-->
+                        <a href="https://www.linkedin.com/company/wild-don-animation-studio/" title="Linkedin" class="logo-button" target="_blank" rel="noopener noreferrer">
+                            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                width="16" height="16" viewBox="0 0 512 512" xml:space="preserve">
+                                <g>
+                                <path d="m255.51,511.31c-72.35,0-144.7-.25-217.05.17-19.19.11-35.45-13.25-38.07-31.36-.27-1.88-.38-3.8-.38-5.7C0,328.86,0,183.32,0,37.77,0,16.79,15.69.85,36.82.71c26.35-.17,
+                                    52.7-.05,79.06-.05,119.3,0,238.61.13,357.91-.13,19.8-.04,33.29,13.44,36.54,26.01.94,3.65,1.6,7.5,1.6,11.26.08,145.39.07,290.77.06,436.16,0,21.32-15.66,37.22-37.04,
+                                    37.32-29.07.13-58.13.04-87.2.04-44.08,0-88.16,0-132.24,0Zm17.53-286.4c0-10.22-.19-18.98.08-27.72.13-4.3-1.13-5.79-5.65-5.74-20.92.23-41.84.26-62.76-.02-5-.07-6.1,1.59-6.1,
+                                    6.27.13,77.63.13,155.26,0,232.9,0,4.77,1.27,6.39,6.18,6.34,21.72-.22,43.44-.22,65.16,0,4.86.05,6.18-1.46,6.15-6.28-.19-39.05-.21-78.11-.02-117.16.04-8.08.56-16.26,
+                                    1.98-24.2,2.95-16.51,10.5-29.89,28.21-34.31,
+                                    5.32-1.33,11.04-1.61,16.56-1.55,18.46.21,29.74,8.74,33.82,26.84,2.18,9.67,3.03,19.82,3.11,29.76.34,40.17.2,80.34.06,120.51-.02,4.7,
+                                    1.28,6.44,6.22,6.39,21.72-.22,43.44-.21,65.16,0,
+                                    4.66.04,5.9-1.5,5.89-6.04-.14-43.2-.14-86.4-.02-129.6.05-17.71-.88-35.32-4.95-52.61-4.81-20.44-13.77-38.36-32.18-50.13-11.38-7.27-24.08-10.78-37.35-12.24-16.25-1.79-32.39-1.94-48.06,
+                                    4.04-17.3,6.6-30.81,
+                                    17.73-41.48,34.57Zm-198.03,89.44c0,38.88.08,77.77-.1,116.65-.02,4.7,1.51,5.95,6.01,5.92,21.87-.18,43.74-.16,65.62-.02,4.21.03,5.85-1.1,5.85-5.67-.13-78.09-.13-156.17,0-234.26,
+                                    0-4.63-1.68-5.54-5.86-5.51-21.55.17-43.11.08-64.66.08q-6.85,0-6.85,6.63c0,38.72,0,77.45,0,116.17Zm38.76-155.56c24.64-.02,44.33-19.66,
+                                    44.35-44.22.01-24.73-19.82-44.52-44.62-44.51-24.75,0-44.32,19.8-44.28,44.78.04,24.5,19.78,43.98,44.55,43.95Z"/>
+                                </g>
+                            </svg>
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+            <!--Tony-->
+            <div class="cta-subgrid">
+                <div class = "cta-profilepic fade-up">
+                    <img src=./tony.jpeg class="video" alt="Background fallback">
+                </div>
+                <div class="cta-box fade-up">
+                    <h2>Tony Kwok </h2>
+                    <p>Founder, Animator</p>
+
+
+                    <div class="social-links">
+                        <!--instagram-->
+                        <a href="https://www.instagram.com/tonykwokkkkk?igsh=MWZqN2tjYWlsYzAwcA==" title="Instagram" class="logo-button" target="_blank" rel="noopener noreferrer">
+                            <svg width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16 12a4 4 0 1 0-1.172 2.829A3.84 3.84 0 0 0 16 12.06l-.001-.063zm2.16 0a6.135 6.135 0 1 1-1.797-4.359 5.92 5.92 0 0 1 1.798 4.256l-.001.109zm1.687-6.406v.002a1.44 1.44 0 1 1-.422-1.018c.256.251.415.601.415.988v.029-.001zm-7.84-3.44-1.195-.008q-1.086-.008-1.649 0t-1.508.047c-.585.02-1.14.078-1.683.17l.073-.01c-.425.07-.802.17-1.163.303l.043-.014a4.12 4.12 0 0 0-2.272 2.254l-.01.027a6 6 0 0 0-.284 1.083l-.005.037a12 12 0 0 0-.159 1.589l-.001.021q-.039.946-.047 1.508t0 1.649.008 1.195-.008 1.195 0 1.649.047 1.508c.02.585.078 1.14.17 1.683l-.01-.073c.07.425.17.802.303 1.163l-.014-.043a4.12 4.12 0 0 0 2.254 2.272l.027.01c.318.119.695.219 1.083.284l.037.005c.469.082 1.024.14 1.588.159l.021.001q.946.039 1.508.047t1.649 0l1.188-.024 1.195.008q1.086.008 1.649 0t1.508-.047c.585-.02 1.14-.078 1.683-.17l-.073.01c.425-.07.802-.17 1.163-.303l-.043.014a4.12 4.12 0 0 0 2.272-2.254l.01-.027c.119-.318.219-.695.284-1.083l.005-.037c.082-.469.14-1.024.159-1.588l.001-.021q.039-.946.047-1.508t0-1.649-.008-1.195.008-1.195 0-1.649-.047-1.508c-.02-.585-.078-1.14-.17-1.683l.01.073a6.3 6.3 0 0 0-.303-1.163l.014.043a4.12 4.12 0 0 0-2.254-2.272l-.027-.01a6 6 0 0 0-1.083-.284l-.037-.005a12 12 0 0 0-1.588-.159l-.021-.001q-.946-.039-1.508-.047t-1.649 0zM24 12q0 3.578-.08 4.953a6.64 6.64 0 0 1-6.985 6.968l.016.001q-1.375.08-4.953.08t-4.953-.08a6.64 6.64 0 0 1-6.968-6.985l-.001.016q-.08-1.375-.08-4.953t.08-4.953A6.64 6.64 0 0 1 7.061.079L7.045.078q1.375-.08 4.953-.08t4.953.08a6.64 6.64 0 0 1 6.968 6.985l.001-.016Q24 8.421 24 12"/></svg>
+                            
+                        </a>
+                        
+                        <!--linkedin-->
+                        <a href="https://www.linkedin.com/in/siu-pang-kwok-1a7675160/" title="Linkedin" class="logo-button" target="_blank" rel="noopener noreferrer">
+                            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                width="16" height="16" viewBox="0 0 512 512" xml:space="preserve">
+                                <g>
+                                <path d="m255.51,511.31c-72.35,0-144.7-.25-217.05.17-19.19.11-35.45-13.25-38.07-31.36-.27-1.88-.38-3.8-.38-5.7C0,328.86,0,183.32,0,37.77,0,16.79,15.69.85,36.82.71c26.35-.17,
+                                    52.7-.05,79.06-.05,119.3,0,238.61.13,357.91-.13,19.8-.04,33.29,13.44,36.54,26.01.94,3.65,1.6,7.5,1.6,11.26.08,145.39.07,290.77.06,436.16,0,21.32-15.66,37.22-37.04,
+                                    37.32-29.07.13-58.13.04-87.2.04-44.08,0-88.16,0-132.24,0Zm17.53-286.4c0-10.22-.19-18.98.08-27.72.13-4.3-1.13-5.79-5.65-5.74-20.92.23-41.84.26-62.76-.02-5-.07-6.1,1.59-6.1,
+                                    6.27.13,77.63.13,155.26,0,232.9,0,4.77,1.27,6.39,6.18,6.34,21.72-.22,43.44-.22,65.16,0,4.86.05,6.18-1.46,6.15-6.28-.19-39.05-.21-78.11-.02-117.16.04-8.08.56-16.26,
+                                    1.98-24.2,2.95-16.51,10.5-29.89,28.21-34.31,
+                                    5.32-1.33,11.04-1.61,16.56-1.55,18.46.21,29.74,8.74,33.82,26.84,2.18,9.67,3.03,19.82,3.11,29.76.34,40.17.2,80.34.06,120.51-.02,4.7,
+                                    1.28,6.44,6.22,6.39,21.72-.22,43.44-.21,65.16,0,
+                                    4.66.04,5.9-1.5,5.89-6.04-.14-43.2-.14-86.4-.02-129.6.05-17.71-.88-35.32-4.95-52.61-4.81-20.44-13.77-38.36-32.18-50.13-11.38-7.27-24.08-10.78-37.35-12.24-16.25-1.79-32.39-1.94-48.06,
+                                    4.04-17.3,6.6-30.81,
+                                    17.73-41.48,34.57Zm-198.03,89.44c0,38.88.08,77.77-.1,116.65-.02,4.7,1.51,5.95,6.01,5.92,21.87-.18,43.74-.16,65.62-.02,4.21.03,5.85-1.1,5.85-5.67-.13-78.09-.13-156.17,0-234.26,
+                                    0-4.63-1.68-5.54-5.86-5.51-21.55.17-43.11.08-64.66.08q-6.85,0-6.85,6.63c0,38.72,0,77.45,0,116.17Zm38.76-155.56c24.64-.02,44.33-19.66,
+                                    44.35-44.22.01-24.73-19.82-44.52-44.62-44.51-24.75,0-44.32,19.8-44.28,44.78.04,24.5,19.78,43.98,44.55,43.95Z"/>
+                                </g>
+                            </svg>
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!--Dexter-->
+            <div class="cta-subgrid">
+                <div class = "cta-profilepic fade-up">
+                    <img src=./dexter.jpg class="video" alt="Background fallback">
+                </div>
+                <div class="cta-box fade-up">
+                    <h2>Dexter Yuen </h2>
+                    <p>Co-Founder, Lighting and Technical Director</p>
+
+
+                    <div class="social-links">
+                        <!--instagram-->
+                        <a href="https://www.instagram.com/dexterfortescue?utm_source=qr&igsh=MTN6bG95OHU0dm0yMQ%3D%3D" title="Instagram" class="logo-button">
+                            <svg width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16 12a4 4 0 1 0-1.172 2.829A3.84 3.84 0 0 0 16 12.06l-.001-.063zm2.16 0a6.135 6.135 0 1 1-1.797-4.359 5.92 5.92 0 0 1 1.798 4.256l-.001.109zm1.687-6.406v.002a1.44 1.44 0 1 1-.422-1.018c.256.251.415.601.415.988v.029-.001zm-7.84-3.44-1.195-.008q-1.086-.008-1.649 0t-1.508.047c-.585.02-1.14.078-1.683.17l.073-.01c-.425.07-.802.17-1.163.303l.043-.014a4.12 4.12 0 0 0-2.272 2.254l-.01.027a6 6 0 0 0-.284 1.083l-.005.037a12 12 0 0 0-.159 1.589l-.001.021q-.039.946-.047 1.508t0 1.649.008 1.195-.008 1.195 0 1.649.047 1.508c.02.585.078 1.14.17 1.683l-.01-.073c.07.425.17.802.303 1.163l-.014-.043a4.12 4.12 0 0 0 2.254 2.272l.027.01c.318.119.695.219 1.083.284l.037.005c.469.082 1.024.14 1.588.159l.021.001q.946.039 1.508.047t1.649 0l1.188-.024 1.195.008q1.086.008 1.649 0t1.508-.047c.585-.02 1.14-.078 1.683-.17l-.073.01c.425-.07.802-.17 1.163-.303l-.043.014a4.12 4.12 0 0 0 2.272-2.254l.01-.027c.119-.318.219-.695.284-1.083l.005-.037c.082-.469.14-1.024.159-1.588l.001-.021q.039-.946.047-1.508t0-1.649-.008-1.195.008-1.195 0-1.649-.047-1.508c-.02-.585-.078-1.14-.17-1.683l.01.073a6.3 6.3 0 0 0-.303-1.163l.014.043a4.12 4.12 0 0 0-2.254-2.272l-.027-.01a6 6 0 0 0-1.083-.284l-.037-.005a12 12 0 0 0-1.588-.159l-.021-.001q-.946-.039-1.508-.047t-1.649 0zM24 12q0 3.578-.08 4.953a6.64 6.64 0 0 1-6.985 6.968l.016.001q-1.375.08-4.953.08t-4.953-.08a6.64 6.64 0 0 1-6.968-6.985l-.001.016q-.08-1.375-.08-4.953t.08-4.953A6.64 6.64 0 0 1 7.061.079L7.045.078q1.375-.08 4.953-.08t4.953.08a6.64 6.64 0 0 1 6.968 6.985l.001-.016Q24 8.421 24 12"/></svg>
+                            
+                        </a>
+                        
+                        <!--linkedin-->
+                        <a href="https://hk.linkedin.com/in/ho-wai-yuen-48496b1a0" title="Linkedin" class="logo-button" target="_blank" rel="noopener noreferrer">
+                            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                width="16" height="16" viewBox="0 0 512 512" xml:space="preserve">
+                                <g>
+                                <path d="m255.51,511.31c-72.35,0-144.7-.25-217.05.17-19.19.11-35.45-13.25-38.07-31.36-.27-1.88-.38-3.8-.38-5.7C0,328.86,0,183.32,0,37.77,0,16.79,15.69.85,36.82.71c26.35-.17,
+                                    52.7-.05,79.06-.05,119.3,0,238.61.13,357.91-.13,19.8-.04,33.29,13.44,36.54,26.01.94,3.65,1.6,7.5,1.6,11.26.08,145.39.07,290.77.06,436.16,0,21.32-15.66,37.22-37.04,
+                                    37.32-29.07.13-58.13.04-87.2.04-44.08,0-88.16,0-132.24,0Zm17.53-286.4c0-10.22-.19-18.98.08-27.72.13-4.3-1.13-5.79-5.65-5.74-20.92.23-41.84.26-62.76-.02-5-.07-6.1,1.59-6.1,
+                                    6.27.13,77.63.13,155.26,0,232.9,0,4.77,1.27,6.39,6.18,6.34,21.72-.22,43.44-.22,65.16,0,4.86.05,6.18-1.46,6.15-6.28-.19-39.05-.21-78.11-.02-117.16.04-8.08.56-16.26,
+                                    1.98-24.2,2.95-16.51,10.5-29.89,28.21-34.31,
+                                    5.32-1.33,11.04-1.61,16.56-1.55,18.46.21,29.74,8.74,33.82,26.84,2.18,9.67,3.03,19.82,3.11,29.76.34,40.17.2,80.34.06,120.51-.02,4.7,
+                                    1.28,6.44,6.22,6.39,21.72-.22,43.44-.21,65.16,0,
+                                    4.66.04,5.9-1.5,5.89-6.04-.14-43.2-.14-86.4-.02-129.6.05-17.71-.88-35.32-4.95-52.61-4.81-20.44-13.77-38.36-32.18-50.13-11.38-7.27-24.08-10.78-37.35-12.24-16.25-1.79-32.39-1.94-48.06,
+                                    4.04-17.3,6.6-30.81,
+                                    17.73-41.48,34.57Zm-198.03,89.44c0,38.88.08,77.77-.1,116.65-.02,4.7,1.51,5.95,6.01,5.92,21.87-.18,43.74-.16,65.62-.02,4.21.03,5.85-1.1,5.85-5.67-.13-78.09-.13-156.17,0-234.26,
+                                    0-4.63-1.68-5.54-5.86-5.51-21.55.17-43.11.08-64.66.08q-6.85,0-6.85,6.63c0,38.72,0,77.45,0,116.17Zm38.76-155.56c24.64-.02,44.33-19.66,
+                                    44.35-44.22.01-24.73-19.82-44.52-44.62-44.51-24.75,0-44.32,19.8-44.28,44.78.04,24.5,19.78,43.98,44.55,43.95Z"/>
+                                </g>
+                            </svg>
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
     </section>
 
     <!-- FOOTER -->
     <footer>
+        
         <div class="footer-content">
-            <div class="footer-brand">
-                <div class="logo"></div>
-                <p>Award-winning animation studio pushing the boundaries of visual storytelling since 2018.</p>
-            </div>
-            <div class="footer-col">
-                <h4>Studio</h4>
-                <a href="#services">About Us</a>
-                <a href="#work">Portfolio</a>
-                <a href="#process">Process</a>
 
-            </div>
 
-            <div class="footer-col">
-                <h4>Contact</h4>
-                <a href="mailto:wilddonstudio@gmail.com">wilddonstudio@gmail.com</a>
-                <a href="#">+852 6779-2480</a>
-                <a href="#">Kowloon, HK</a>
-                <div class="social-links">
-                <a href="#" title="Instagram" class="logo-button">
-                    <svg width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M16 12a4 4 0 1 0-1.172 2.829A3.84 3.84 0 0 0 16 12.06l-.001-.063zm2.16 0a6.135 6.135 0 1 1-1.797-4.359 5.92 5.92 0 0 1 1.798 4.256l-.001.109zm1.687-6.406v.002a1.44 1.44 0 1 1-.422-1.018c.256.251.415.601.415.988v.029-.001zm-7.84-3.44-1.195-.008q-1.086-.008-1.649 0t-1.508.047c-.585.02-1.14.078-1.683.17l.073-.01c-.425.07-.802.17-1.163.303l.043-.014a4.12 4.12 0 0 0-2.272 2.254l-.01.027a6 6 0 0 0-.284 1.083l-.005.037a12 12 0 0 0-.159 1.589l-.001.021q-.039.946-.047 1.508t0 1.649.008 1.195-.008 1.195 0 1.649.047 1.508c.02.585.078 1.14.17 1.683l-.01-.073c.07.425.17.802.303 1.163l-.014-.043a4.12 4.12 0 0 0 2.254 2.272l.027.01c.318.119.695.219 1.083.284l.037.005c.469.082 1.024.14 1.588.159l.021.001q.946.039 1.508.047t1.649 0l1.188-.024 1.195.008q1.086.008 1.649 0t1.508-.047c.585-.02 1.14-.078 1.683-.17l-.073.01c.425-.07.802-.17 1.163-.303l-.043.014a4.12 4.12 0 0 0 2.272-2.254l.01-.027c.119-.318.219-.695.284-1.083l.005-.037c.082-.469.14-1.024.159-1.588l.001-.021q.039-.946.047-1.508t0-1.649-.008-1.195.008-1.195 0-1.649-.047-1.508c-.02-.585-.078-1.14-.17-1.683l.01.073a6.3 6.3 0 0 0-.303-1.163l.014.043a4.12 4.12 0 0 0-2.254-2.272l-.027-.01a6 6 0 0 0-1.083-.284l-.037-.005a12 12 0 0 0-1.588-.159l-.021-.001q-.946-.039-1.508-.047t-1.649 0zM24 12q0 3.578-.08 4.953a6.64 6.64 0 0 1-6.985 6.968l.016.001q-1.375.08-4.953.08t-4.953-.08a6.64 6.64 0 0 1-6.968-6.985l-.001.016q-.08-1.375-.08-4.953t.08-4.953A6.64 6.64 0 0 1 7.061.079L7.045.078q1.375-.08 4.953-.08t4.953.08a6.64 6.64 0 0 1 6.968 6.985l.001-.016Q24 8.421 24 12"/></svg>
-                    
-                </a>
-                
-                
-                <a href="https://www.linkedin.com/company/wild-don-animation-studio/" title="Linkedin" class="logo-button">
-                <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                	 width="16" height="16" viewBox="0 0 512 512" xml:space="preserve">
-                    <g>
-                	  <path d="m255.51,511.31c-72.35,0-144.7-.25-217.05.17-19.19.11-35.45-13.25-38.07-31.36-.27-1.88-.38-3.8-.38-5.7C0,328.86,0,183.32,0,37.77,0,16.79,15.69.85,36.82.71c26.35-.17,
-                        52.7-.05,79.06-.05,119.3,0,238.61.13,357.91-.13,19.8-.04,33.29,13.44,36.54,26.01.94,3.65,1.6,7.5,1.6,11.26.08,145.39.07,290.77.06,436.16,0,21.32-15.66,37.22-37.04,
-                        37.32-29.07.13-58.13.04-87.2.04-44.08,0-88.16,0-132.24,0Zm17.53-286.4c0-10.22-.19-18.98.08-27.72.13-4.3-1.13-5.79-5.65-5.74-20.92.23-41.84.26-62.76-.02-5-.07-6.1,1.59-6.1,
-                        6.27.13,77.63.13,155.26,0,232.9,0,4.77,1.27,6.39,6.18,6.34,21.72-.22,43.44-.22,65.16,0,4.86.05,6.18-1.46,6.15-6.28-.19-39.05-.21-78.11-.02-117.16.04-8.08.56-16.26,
-                        1.98-24.2,2.95-16.51,10.5-29.89,28.21-34.31,
-                        5.32-1.33,11.04-1.61,16.56-1.55,18.46.21,29.74,8.74,33.82,26.84,2.18,9.67,3.03,19.82,3.11,29.76.34,40.17.2,80.34.06,120.51-.02,4.7,
-                        1.28,6.44,6.22,6.39,21.72-.22,43.44-.21,65.16,0,
-                        4.66.04,5.9-1.5,5.89-6.04-.14-43.2-.14-86.4-.02-129.6.05-17.71-.88-35.32-4.95-52.61-4.81-20.44-13.77-38.36-32.18-50.13-11.38-7.27-24.08-10.78-37.35-12.24-16.25-1.79-32.39-1.94-48.06,
-                        4.04-17.3,6.6-30.81,
-                        17.73-41.48,34.57Zm-198.03,89.44c0,38.88.08,77.77-.1,116.65-.02,4.7,1.51,5.95,6.01,5.92,21.87-.18,43.74-.16,65.62-.02,4.21.03,5.85-1.1,5.85-5.67-.13-78.09-.13-156.17,0-234.26,
-                        0-4.63-1.68-5.54-5.86-5.51-21.55.17-43.11.08-64.66.08q-6.85,0-6.85,6.63c0,38.72,0,77.45,0,116.17Zm38.76-155.56c24.64-.02,44.33-19.66,
-                        44.35-44.22.01-24.73-19.82-44.52-44.62-44.51-24.75,0-44.32,19.8-44.28,44.78.04,24.5,19.78,43.98,44.55,43.95Z"/>
-                    </g>
-                </svg>
-                </a>
-            </div>
-            </div>
+
         </div>
         <div class="footer-bottom">
-            <p>© 2026 Wild Don Animation Studio. All rights reserved.</p>
             
+            <p>© 2026 Wild Don Animation Studio. All rights reserved.</p>
         </div>
     </footer>
 <script src="script.js"></script>

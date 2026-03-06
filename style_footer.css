@@ -1,7 +1,7 @@
         /* ---- FOOTER ---- */
         footer {
-            padding: 4rem 2rem 2rem;
-            border-top: 1px solid var(--border);
+
+            
         }
 
         .footer-content {
@@ -10,7 +10,7 @@
             display: grid;
             grid-template-columns: 2fr 1fr 1fr 1fr;
             gap: 3rem;
-            margin-bottom: 3rem;
+
         }
 
         .footer-brand .logo {
@@ -64,45 +64,5 @@
             font-size: 0.82rem;
         }
 
-        .social-links {
-            display: flex;
-            gap: 1rem;
-        }
 
-        .social-links a {
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            border: 1px solid var(--border);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-primary);
-            text-decoration: none;
-            font-size: 0.85rem;
-            transition: border-color 0.3s, color 0.3s, background 0.3s;
-        }
 
-        .social-links a:hover {
-            border-color: var(--border);
-            color: var(--accent-light);
-            background: rgba(124, 58, 237, 0.1);
-        }
-
-        }
-        .social-links a svg {
-            width: 16px;
-            height: auto;
-            margin-right: 10px;
-        }
-
-        .social-links a svg path {
-            fill: var(--text-primary);            
-            transition: fill 0.3s ease;
-        }
-        
-
-        .social-links a:hover svg path {
-            fill: var(--accent-light);             
-
-        }

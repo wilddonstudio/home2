@@ -14,7 +14,7 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 
 document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
-
+/*
 // Canvas animated background for showreel
 const canvas = document.getElementById('reelCanvas');
 if (canvas) {
@@ -117,6 +117,7 @@ const statObserver = new IntersectionObserver((entries) => {
 
 const statsGrid = document.querySelector('.stats-grid');
 if (statsGrid) statObserver.observe(statsGrid);
+*/
 
 //---------------------------------------------BUTTON
 const buttons = document.querySelectorAll('.work-card');
@@ -139,8 +140,11 @@ function toggleExpand(button) {
     activeButton = button;
     document.body.style.overflow = 'hidden'; // Prevent page scroll
     } else {
+    activeButton.scrollTo({top:0,behavior:'instant'});
     activeButton = null;
-    document.body.style.overflow = 'auto';
+    document.body.style.overflowX = 'hidden';
+    document.body.style.overflowY = 'auto';
+    
     }
 }
 
@@ -199,6 +203,8 @@ document.querySelectorAll('.image-switch').forEach(link => {
   });
 });
 
+
+
 const iframe = document.getElementById('work-player');
 const wrapper = iframe.parentElement;
 
@@ -237,18 +243,26 @@ function updateVideoDisplay() {
         if (video.readyState >= 1 && video.videoWidth > 0) {
             const origW = video.videoWidth;
             const origH = video.videoHeight;
+            const clientW = video.clientWidth;
+            const clientH = video.clientHeight;
             const aspect = origW / origH;
 
             let displayW, displayH;
 
-            if (origW >= origH) {
+            if (origW > origH) {
                 // Landscape or square → width-limited
-                displayW = ww * 0.7;
+                displayW = ww * 0.65;
                 displayH = displayW / aspect;   // preserve original aspect
             } else {
                 // Portrait → height-limited
-                displayH = wh * 0.7;
-                displayW = displayH * aspect;
+                if (wh*0.75*aspect > ww) {
+                    displayW = ww * 0.9;
+                    displayH = displayW / aspect;   // preserve original aspect
+                }
+                else{
+                    displayH = wh * 0.75;
+                    displayW = displayH * aspect;
+                }
             }
 
             text += `  •  Video: ${origW} × ${origH}  (aspect: ${aspect.toFixed(3)})`;

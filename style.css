@@ -5,12 +5,13 @@
         }
 
         :root {
-            --test:1;
+            --test:0;
+            --video-margin:0px;
             --halftone-height:512px;
             --marquee-height:200px;
-            --marquee-minheight:60px;
+            --marquee-minheight:90px;
             --partner-height:150px;
-            --partner-minheight:50px;
+            --partner-minheight:80px;
             --bg-dark: #070707;
             --bg-card: #12121a;
             --accent: #FFA500;

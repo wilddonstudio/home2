@@ -1,21 +1,59 @@
         /* ---- CTA ---- */
         .cta-section {
+
             text-align: center;
             position: relative;
             overflow: hidden;
+            justify-items: center;
+            border: if(style(--test:1):1px solid blue; else:none);
+        }
+        .cta-grid{
+
+            width:900px;
+            height:auto;
+            position:relative;
+            display:grid;
+            grid-template-columns: 1fr;
+            gap:80px;
+            justify-content: center;
+            justify-items:center ;
+            border: if(style(--test:1):1px solid white; else:none);
+        }
+        .cta-subgrid{
+            width:80%;
+            justify-items: center;
+            height:auto;
+            position:relative;
+            display:grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            border: if(style(--test:1):1px solid green; else:none);
+
         }
 
+        .cta-profilepic{
+
+            position:relative;
+            width:70%;
+            height:auto;
+            aspect-ratio: 1;
+            border-radius: 1000px;
+            object-fit: contain;
+            overflow:hidden;
+            border: if(style(--test:1):1px solid red; else:none);
+
+        }
         .cta-box {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 4rem 2rem;
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 30px;
-            position: relative;
-            overflow: hidden;
-        }
 
+            margin-left: 20px;
+            position:relative;
+            width:100%;
+            height:auto;
+            object-fit: contain;
+            text-align: left;
+            border: if(style(--test:1):1px solid yellow; else:none);
+        }
+/*
         .cta-box::before {
             content: '';
             position: absolute;
@@ -26,23 +64,78 @@
             background: radial-gradient(circle at center, var(--accent-glow), transparent 60%);
             opacity: 0.3;
         }
+            */
 
         .cta-box h2 {
             font-family: 'Space Grotesk', sans-serif;
-            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            font-size: 1.62rem;
             font-weight: 700;
-            margin-bottom: 1rem;
+            margin-bottom: 0.5rem;
             position: relative;
             letter-spacing: -1px;
+            transition: 0.3s;
         }
 
         .cta-box p {
             color: var(--text-secondary);
-            margin-bottom: 2rem;
+            margin-bottom: 0.5rem;
             font-size: 1.05rem;
             position: relative;
+            transition: 0.3s;
         }
 
         .cta-box .btn-primary {
             position: relative;
+        }
+
+        .cta-box p:hover {
+        filter: brightness(150%);
+        }
+
+        .cta-box h2:hover {
+        filter: brightness(150%);
+        }
+
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-links a {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            border: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-primary);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: border-color 0.3s, color 0.3s, background 0.3s;
+        }
+
+        .social-links a:hover {
+            border-color: var(--border);
+            color: var(--accent-light);
+            background: rgba(124, 58, 237, 0.1);
+        }
+
+        }
+        .social-links a svg {
+            width: 16px;
+            height: auto;
+            margin-right: 10px;
+        }
+
+        .social-links a svg path {
+            fill: var(--text-primary);            
+            transition: fill 0.3s ease;
+        }
+        
+
+        .social-links a:hover svg path {
+            fill: var(--accent-light);             
+
         }

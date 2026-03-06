@@ -15,7 +15,7 @@
             text-transform: uppercase;
             letter-spacing: 3px;
             font-weight: 600;
-            margin-bottom: 2rem;
+            margin-bottom: 1rem;
 
             border:if(style(--test:1):1px solid yellow; else:none);
         }
