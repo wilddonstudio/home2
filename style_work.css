@@ -251,11 +251,11 @@ top:0;
   justify-items: center;
   color: white;
   background:black;
-  opacity: if(style(--test:1):1; else:0);
+  opacity: 0;
   padding: 8px 12px;
   border-radius: 6px;
   font-family: sans-serif;
-  z-index: 9999;
+  z-index: 0;
   border:if(style(--test:1):1px solid blue; else:none);
 }
 

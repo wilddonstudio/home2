@@ -5,7 +5,7 @@
         }
 
         :root {
-            --test:1;
+            --test:0;
             --video-margin:0px;
             --halftone-height:512px;
             --marquee-height:200px;
@@ -50,12 +50,14 @@
 
                 /* Chrome / Edge / Safari / Opera */
         ::-webkit-scrollbar {
+            transform: translateX(20px);
         width: 10px;
         height: 10px;
         }
 
         ::-webkit-scrollbar-track {
         background: var(--bg-card);      /* gray-900 */
+        opacity: 0;
         }
 
         ::-webkit-scrollbar-thumb {
