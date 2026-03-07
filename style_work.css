@@ -134,7 +134,8 @@ transform: translate(-50%,-50%);
   border-radius: 12px;
   box-shadow: 0 10px 100px rgba(from var(--text-orange) r g b / 0.25);
   z-index: 1201;
-  border: if(style(--test:1):1px solid red; else:1px solid var(--border));
+
+  border:1px solid var(--text-orange);
 
 }
 
