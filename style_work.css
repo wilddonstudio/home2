@@ -134,7 +134,7 @@ transform: translate(-50%,-50%);
   border-radius: 12px;
   box-shadow: 0 10px 100px rgba(from var(--text-orange) r g b / 0.25);
   z-index: 1201;
-  border: if(style(--test:1):1px solid red; else:none);
+  border: if(style(--test:1):1px solid red; else:1px solid var(--border));
 
 }
 
@@ -245,14 +245,16 @@ transform: translate(-50%,-50%);
 
 .info {
   position: absolute;
+top:0;
   justify-content: center;
   justify-items: center;
   color: white;
-  opacity: 0;
+  background:black;
+  opacity: if(style(--test:1):1; else:0);
   padding: 8px 12px;
   border-radius: 6px;
   font-family: sans-serif;
-  z-index: 10;
+  z-index: 9999;
   border:if(style(--test:1):1px solid blue; else:none);
 }
 

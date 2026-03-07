@@ -154,10 +154,10 @@
                 grid-template-columns: 1fr;
             }
             .work-card.expanded .button-text h3{
-                    font-size: 0.9rem;
+                    font-size: clamp(0.7rem 0.8rem 0.9rem);
             }
             .work-card.expanded .button-text h2{
-                    font-size: 0.7rem;
+                    font-size: clamp(0.6rem 0.7rem 0.8rem);
             }
             #process {
                 display: none;
@@ -168,12 +168,14 @@
 
             }
             .cta-profilepic{
-                width:25%;
+                width:40%;
                 margin:20px;
 
             }
             .cta-box{
-               text-align: center;
+                text-align: center;  
+
+                margin-left: 0;
             }
 
             .social-links{
