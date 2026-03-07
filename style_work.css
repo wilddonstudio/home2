@@ -42,8 +42,6 @@
   top:50%;
   left:50%;
 transform: translate(-50%,-50%);
-
-
   border: if(style(--test:1):1px solid white; else:none);
 }
 

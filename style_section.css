@@ -2,26 +2,16 @@
         section {
             padding: 6rem 2rem;
             color:var(--text-secondary);
+            border-bottom: 1px solid var(--border);
         }
 
         .section-header {
             text-align: center;
             margin-bottom: 4rem;
+            border:if(style(--test:1):1px solid yellow; else:none);
         }
 
-        .section-tag {
-            display: inline-block;
-            padding: 0.4rem 1rem;
-            background: rgba(124, 58, 237, 0.12);
-            border: 1px solid rgba(124, 58, 237, 0.2);
-            border-radius: 50px;
-            font-size: 0.8rem;
-            color: var(--accent-light);
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 1rem;
-        }
+
 
         .section-header h2 {
             font-family: 'Space Grotesk', sans-serif;
