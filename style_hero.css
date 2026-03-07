@@ -58,7 +58,7 @@
     }
 
     h1:hover{
-      color:var(--text-orange);
+      filter: brightness(150%);
     }
 
     p {

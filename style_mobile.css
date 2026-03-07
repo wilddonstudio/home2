@@ -159,6 +159,9 @@
             .work-card.expanded .button-text h2{
                     font-size: 0.7rem;
             }
+            #process {
+                display: none;
+            }
 
             .cta-subgrid{
                 grid-template-columns: 1fr;

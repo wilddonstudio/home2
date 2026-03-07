@@ -5,7 +5,7 @@
         }
 
         :root {
-            --test:1;
+            --test:0;
             --video-margin:0px;
             --halftone-height:512px;
             --marquee-height:200px;
