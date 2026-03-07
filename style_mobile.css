@@ -153,11 +153,11 @@
             .work-subgrid{
                 grid-template-columns: 1fr;
             }
-            .work-card.expanded .button-text h3{
-                    font-size: clamp(0.7rem 0.8rem 0.9rem);
+            .work-card.expanded .button-text h3, .work-card-y.expanded .button-text h3{
+                    font-size: 1rem;
             }
-            .work-card.expanded .button-text h2{
-                    font-size: clamp(0.6rem 0.7rem 0.8rem);
+            .work-card.expanded .button-text h2, .work-card-y.expanded .button-text h2{
+                    font-size: 0.8rem;
             }
             #process {
                 display: none;
