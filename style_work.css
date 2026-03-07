@@ -135,7 +135,7 @@ transform: translate(-50%,-50%);
   box-shadow: 0 10px 100px rgba(from var(--text-orange) r g b / 0.25);
   z-index: 1201;
 
-  border:1px solid var(--text-orange);
+  border:1px solid var(--border);
 
 }
 
