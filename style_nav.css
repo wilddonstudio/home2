@@ -21,7 +21,8 @@
             position:absolute;
             top:0%;
             left:20px;
-
+            scale:0.9;
+            transform: translate(-25px,-20px);
             z-index:1100;
         }
 
@@ -36,7 +37,7 @@
 
         .nav-links {
             position:relative;
-            right:160px;
+            right:170px;
             display: flex;
             gap: 2rem;
             list-style: none;

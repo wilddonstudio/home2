@@ -64,16 +64,16 @@
 
             }
             .logo{
-                left:20px;
-                scale:0.65;
-                transform: translate(-50px,-60px);
+
+                scale:0.5;
+                transform: translate(-110px,-100px);
             }
             .nav-cta{
                 display:none;
             }
 
             .hamburger {
-                left:85%;
+                left:90%;
                 top:30px;
                 display: flex;
                 border: if(style(--test:1):1px solid yellow; else:none);
@@ -160,8 +160,17 @@
             .work-card.expanded .button-text h2, .work-card-y.expanded .button-text h2{
                     font-size: 0.8rem;
             }
+            /*
             #process {
                 display: none;
+            }
+            */
+            .workflow{
+                display:none;
+            }
+
+            .workflow-v{
+                display:flex;
             }
 
             .cta-subgrid{
@@ -169,7 +178,7 @@
 
             }
             .cta-profilepic{
-                width:40%;
+                width:60%;
                 margin:20px;
 
             }

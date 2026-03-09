@@ -27,7 +27,7 @@
     /* ── Content on top ── */
 
     .hero-content {
-      left:0;
+      left:10px;
       bottom: 10px;
       position: absolute;
       z-index: 3;

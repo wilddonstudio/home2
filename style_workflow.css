@@ -1,9 +1,18 @@
 .workflow{
     display:flex;
     justify-content:center;
-width:100%;
+    width:100%;
 }
 
-.workflow img{
+.workflow-v{
+    display:none;
+    justify-content:center;
+    width:100%;
+}
+.workflow-v img{
     width:80%;
+}
+.workflow img{
+    max-width:1400px;
+    width:90%;
 }
