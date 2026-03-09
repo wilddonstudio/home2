@@ -10,7 +10,8 @@
     width:100%;
 }
 .workflow-v img{
-    width:80%;
+transform: translateX(25px);
+    width:100%;
 }
 .workflow img{
     max-width:1400px;
