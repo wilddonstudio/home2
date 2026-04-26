@@ -226,7 +226,7 @@
         </div>
         <div class="work-grid">
 
-            <div class="work-card-y fade-up" >
+            <div class="work-card fade-up" >
                 <div class="work-card-bg">
                       <img src="./projects/project_thumbnail/project_unbowed_thumbnail.png" class="video" alt="Background fallback" >
                     
@@ -243,14 +243,22 @@
                         <h2>13th Hong Kong Animation Support Program Submission 第十三屆動畫支援計劃</h2>
                     </div>
                     
-                    <div class="work-subgrid">
-                        <img src="./projects/project_unbowed/0100.png" class="work-image" alt="Background fallback" loading="lazy">
-                        <img src="./projects/project_unbowed/0230.png" class="work-image" alt="Background fallback" loading="lazy">
-                        <img src="./projects/project_unbowed/0440.png" class="work-image" alt="Background fallback" loading="lazy">
-                        <img src="./projects/project_unbowed/0520.png" class="work-image" alt="Background fallback" loading="lazy">
-                        <img src="./projects/project_unbowed/0575.png" class="work-image" alt="Background fallback" loading="lazy">
-                        <img src="./projects/project_unbowed/phase2.jpeg" class="work-image" alt="Background fallback" loading="lazy">
+                    <div class="work-container">
+                        <video
+                        id="work-player"               
+                        class="work-player"
+                        controls                       
+                        preload="metadata"
+                        muted
+                        playsinline
+                        src="./projects/project_unbowed/Unbowed_Trailer.mp4"   
+                        title="Unbowed Trailer"
+                        loading="lazy"
+                        >
                         
+                        Your browser does not support the video tag.
+                        </video>
+                      <div class="info">Waiting for video…</div>
                     </div>
 
                 </div>
@@ -626,9 +634,21 @@
 
                     <div class="social-links">
                         <!--instagram-->
-                        <a href="https://www.instagram.com/dexterfortescue?utm_source=qr&igsh=MTN6bG95OHU0dm0yMQ%3D%3D" title="Instagram" class="logo-button">
+                        <a href="https://www.instagram.com/dexterfortescue?utm_source=qr&igsh=MTN6bG95OHU0dm0yMQ%3D%3D" title="Instagram" class="logo-button" target="_blank" rel="noopener noreferrer">
                             <svg width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M16 12a4 4 0 1 0-1.172 2.829A3.84 3.84 0 0 0 16 12.06l-.001-.063zm2.16 0a6.135 6.135 0 1 1-1.797-4.359 5.92 5.92 0 0 1 1.798 4.256l-.001.109zm1.687-6.406v.002a1.44 1.44 0 1 1-.422-1.018c.256.251.415.601.415.988v.029-.001zm-7.84-3.44-1.195-.008q-1.086-.008-1.649 0t-1.508.047c-.585.02-1.14.078-1.683.17l.073-.01c-.425.07-.802.17-1.163.303l.043-.014a4.12 4.12 0 0 0-2.272 2.254l-.01.027a6 6 0 0 0-.284 1.083l-.005.037a12 12 0 0 0-.159 1.589l-.001.021q-.039.946-.047 1.508t0 1.649.008 1.195-.008 1.195 0 1.649.047 1.508c.02.585.078 1.14.17 1.683l-.01-.073c.07.425.17.802.303 1.163l-.014-.043a4.12 4.12 0 0 0 2.254 2.272l.027.01c.318.119.695.219 1.083.284l.037.005c.469.082 1.024.14 1.588.159l.021.001q.946.039 1.508.047t1.649 0l1.188-.024 1.195.008q1.086.008 1.649 0t1.508-.047c.585-.02 1.14-.078 1.683-.17l-.073.01c.425-.07.802-.17 1.163-.303l-.043.014a4.12 4.12 0 0 0 2.272-2.254l.01-.027c.119-.318.219-.695.284-1.083l.005-.037c.082-.469.14-1.024.159-1.588l.001-.021q.039-.946.047-1.508t0-1.649-.008-1.195.008-1.195 0-1.649-.047-1.508c-.02-.585-.078-1.14-.17-1.683l.01.073a6.3 6.3 0 0 0-.303-1.163l.014.043a4.12 4.12 0 0 0-2.254-2.272l-.027-.01a6 6 0 0 0-1.083-.284l-.037-.005a12 12 0 0 0-1.588-.159l-.021-.001q-.946-.039-1.508-.047t-1.649 0zM24 12q0 3.578-.08 4.953a6.64 6.64 0 0 1-6.985 6.968l.016.001q-1.375.08-4.953.08t-4.953-.08a6.64 6.64 0 0 1-6.968-6.985l-.001.016q-.08-1.375-.08-4.953t.08-4.953A6.64 6.64 0 0 1 7.061.079L7.045.078q1.375-.08 4.953-.08t4.953.08a6.64 6.64 0 0 1 6.968 6.985l.001-.016Q24 8.421 24 12"/></svg>
+                            <path d="M16 12a4 4 0 1 0-1.172 2.829A3.84 3.84 0 0 0 16 12.06l-.001-.063zm2.16 0a6.135 6.135 0 1 1-1.797-4.359 5.92 5.92 0 0 1 1.798
+                             4.256l-.001.109zm1.687-6.406v.002a1.44 1.44 0 1 1-.422-1.018c.256.251.415.601.415.988v.029-.001zm-7.84-3.44-1.195-.008q-1.086-.008-1.649
+                              0t-1.508.047c-.585.02-1.14.078-1.683.17l.073-.01c-.425.07-.802.17-1.163.303l.043-.014a4.12 4.12 0 0 0-2.272 2.254l-.01.027a6 6 0 0 0-.284
+                               1.083l-.005.037a12 12 0 0 0-.159 1.589l-.001.021q-.039.946-.047 1.508t0 1.649.008 1.195-.008 1.195 0 1.649.047 1.508c.02.585.078 1.14.17
+                                1.683l-.01-.073c.07.425.17.802.303 1.163l-.014-.043a4.12 4.12 0 0 0 2.254 2.272l.027.01c.318.119.695.219 1.083.284l.037.005c.469.082
+                                 1.024.14 1.588.159l.021.001q.946.039 1.508.047t1.649 0l1.188-.024 1.195.008q1.086.008 1.649 0t1.508-.047c.585-.02 1.14-.078
+                                  1.683-.17l-.073.01c.425-.07.802-.17 1.163-.303l-.043.014a4.12 4.12 0 0 0
+                                   2.272-2.254l.01-.027c.119-.318.219-.695.284-1.083l.005-.037c.082-.469.14-1.024.159-1.588l.001-.021q.039-.946.047-1.508t0-1.649-.008-1.195.008-1.195
+                                    0-1.649-.047-1.508c-.02-.585-.078-1.14-.17-1.683l.01.073a6.3 6.3 0 0 0-.303-1.163l.014.043a4.12
+                                   4.12 0 0 0-2.254-2.272l-.027-.01a6 6 0 0 0-1.083-.284l-.037-.005a12 12 0 0 0-1.588-.159l-.021-.001q-.946-.039-1.508-.047t-1.649
+                                    0zM24 12q0 3.578-.08 4.953a6.64 6.64 0 0 1-6.985 6.968l.016.001q-1.375.08-4.953.08t-4.953-.08a6.64
+                                     6.64 0 0 1-6.968-6.985l-.001.016q-.08-1.375-.08-4.953t.08-4.953A6.64 6.64 0 0 1 7.061.079L7.045.078q1.375-.08 4.953-.08t4.953.08a6.64
+                                      6.64 0 0 1 6.968 6.985l.001-.016Q24 8.421 24 12"/></svg>
                             
                         </a>
                         
@@ -652,7 +672,22 @@
                                 </g>
                             </svg>
                         </a>
-                    </div>
+                        <!--website-->
+                        <a href="https://hwydexter.wixsite.com/home" title="Resume" class="logo-button" target="_blank" rel="noopener noreferrer">
+                            <svg width="20" height="20" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M16 15.503A5.041 5.041 0 1 0
+                                 16 5.42a5.041 5.041 0 0 0 0 10.083zm0 2.215c-6.703 0-11 3.699-11 5.5v3.363h22v-3.363c0-2.178-4.068-5.5-11-5.5z"/></svg>
+                        </a>
+                        <!--youtube
+                        <a href="https://www.youtube.com/@DYFortescue" title="Youtube" class="logo-button" target="_blank" rel="noopener noreferrer">
+                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20" viewBox="0 0 30 30">
+                                <path d="M 15 4 C 10.814 4 5.3808594 5.0488281 5.3808594 5.0488281 L 5.3671875 5.0644531 C 3.4606632 5.3693645 2
+                                 7.0076245 2 9 L 2 15 L 2 15.001953 L 2 21 L 2 21.001953 A 4 4 0 0 0 5.3769531 24.945312 L 5.3808594 24.951172 C
+                                  5.3808594 24.951172 10.814 26.001953 15 26.001953 C 19.186 26.001953 24.619141 24.951172 24.619141 24.951172 L
+                                   24.621094 24.949219 A 4 4 0 0 0 28 21.001953 L 28 21 L 28 15.001953 L 28 15 L 28 9 A 4 4 0 0 0 24.623047 5.0546875
+                                    L 24.619141 5.0488281 C 24.619141 5.0488281 19.186 4 15 4 z M 12 10.398438 L 20 15 L 12 19.601562 L 12 10.398438 z"></path>
+                            </svg>
+                        </a>
+                        -->
 
                 </div>
 
