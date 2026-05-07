@@ -145,6 +145,16 @@
     .about-container{
         width:60vw;
     }
+    .image-container-white,.image-container{
+        max-width: 100%;
+    }
+    .services-subgrid{
+        column-gap: 1rem;
+        align-items: start;
+    }
+    .services-card{
+        text-align: left;
+    }
     .image-bento{
         grid-template-columns: 1fr;
         overflow: visible;
@@ -152,8 +162,7 @@
             "box-1"
             "box-2"
             "box-3";
-        padding-left: 9vw;
-        padding-right: 9vw;
+        max-width:100%;
     }
     .work-grid {
         grid-template-columns: 1fr;
