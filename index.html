@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="style_about.css">
     <link rel="stylesheet" href="style_section.css">
     <link rel="stylesheet" href="style_work.css">
+    <link rel="stylesheet" href="style_service.css">
     <link rel="stylesheet" href="style_workflow.css">
     <link rel="stylesheet" href="style_cta.css">
     <link rel="stylesheet" href="style_footer.css">
@@ -87,7 +88,8 @@
         </div>
         <div></div>
         <ul class="nav-links">
-            <li><a href="#services">About Us</a></li>
+            <li><a href="#aboutus">About Us</a></li>
+            <li><a href="#services">Services</a></li>
             <li><a href="#work">Work</a></li>
             <li><a href="#process">Process</a></li>
             
@@ -106,7 +108,8 @@
     <!-- MOBILE MENU -->
     <div class="mobile-menu" id="mobileMenu">
         <button class="mobile-close" onclick="toggleMenu()">✕</button>
-        <a href="#services" onclick="toggleMenu()">About Us</a>
+        <a href="#aboutus" onclick="toggleMenu()">About Us</a>
+        <a href="#services" onclick="toggleMenu()">Services</a>
         <a href="#work" onclick="toggleMenu()">Work</a>
         <a href="#process" onclick="toggleMenu()">Process</a>
         <a href="#contact" onclick="toggleMenu()" ><span>Get in Touch</span> </a>
@@ -182,8 +185,8 @@
         
     </div>
 
-    <!-- SERVICES -->
-    <section id="services">
+    <!-- ABOUT -->
+    <section id="aboutus">
         <div class="section-header fade-up">
             
             <h2>About Us</h2>
@@ -212,6 +215,122 @@
                 </div>
             </div>
 
+
+
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services">
+        <div class="section-header fade-up">
+            
+            <h2>Services</h2>
+            <p>服務</p>
+        </div>
+        <div class="services-grid">
+            <div class="services-card-empty"></div>
+            <div class="services-container"> 
+                <div class="services-subgrid">
+
+                    <div class="services-subcontainer fade-up">
+                        <h3>動畫廣告與視覺特效製作</h3>
+                        <div class="services-card">
+                        
+                        我們為企業、品牌與機構量⾝打造具視覺衝擊
+                        ⼒的動畫廣告、推廣短⽚與宣傳內容，結合創
+                        意腳本與動態設計，吸引觀眾⽬光。透過
+                        AI輔助流程，我們可在短時間內提供⾼質量製作，
+                        適⽤於網絡投放、展會展⽰與產品⾏銷。
+                        </div>
+
+                    </div>
+                    <div class="image-bento">
+                        <div class="image-bento-box fade-up" style="grid-area: box-1">
+                            <video  autoplay muted loop playsinline preload="auto">
+                            <source src=./services/ad_m&s.mp4 type="video/mp4">
+                            <!-- Fallback image if video doesn't load -->
+                            <img src="https://images.unsplash.com/photo-1557683311-973673bafafb?w=1600" alt="Background fallback">
+                            </video>
+                        </div>
+                        <div class="image-bento-box fade-up" style="grid-area: box-2">
+                            <video  autoplay muted loop playsinline preload="auto">
+                            <source src=./services/ad_samsung.mp4 type="video/mp4">
+                            <!-- Fallback image if video doesn't load -->
+                            <img src="https://images.unsplash.com/photo-1557683311-973673bafafb?w=1600" alt="Background fallback">
+                            </video>
+                        </div>
+                        <div class="image-bento-box fade-up" style="grid-area: box-3">
+                            <img src="./services/ad_uow.gif"  alt="Background fallback" >
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="services-subcontainer fade-up">
+                        <h3>原創3D動畫製作</h3>
+                        <div class="services-card">
+                        
+                        我們提供從角色設計、場景建構到動作演出與
+                        渲染的全流程3D動畫製作服務，適用於短
+                        片、劇集、MV與品牌內容。我們強調故事性
+                        與視覺風格，並整合AI工具提升製作效率，確保高品質輸出，適合用於影展、平台發行或IP
+                        孵化。
+                        </div>
+
+                    </div>
+                    <div class="image-flex">
+                        <div class="image-container-white fade-up">
+                            <img src="./services/CharacterSheet_Adult.png"  alt="Background fallback" >
+                        </div>
+                        <div class="image-container-white fade-up">
+                            <img src="./services/CharacterSheet_Fat.png"  alt="Background fallback" >
+                        </div>
+                        <div class="image-container-white fade-up">
+                            <img src="./services/CharacterSheet_Kid.png"  alt="Background fallback" >
+                        </div>
+                        <div class="image-container fade-up">
+                            <img src="./services/CharacterSheet_Adult_expression.jpg"  alt="Background fallback" >
+                        </div>
+                        <div class="image-container fade-up">
+                            <img src="./services/CharacterSheet_Fat_expression.jpg"  alt="Background fallback" >
+                        </div>
+                        <div class="image-container fade-up">
+                            <img src="./services/CharacterSheet_Kid_expression.jpg"  alt="Background fallback" >
+                        </div>
+                    </div>
+
+                    <div class="services-subcontainer fade-up">
+                        <h3>3DxAI 動畫製作流程教學</h3>
+                        <div class="services-card">
+                        
+                        我們為動畫工作室、創作團隊或教育機構提供
+                        3DxAI整合教學服務，協助導入自動建模、鏡頭
+                        設計、動作補間與渲染優化等流程。透過模組化
+                        技術部署，我們幫助客戶建立高效、可擴展的動
+                        畫生產體系，提升內容產能與競爭力。
+                        </div>
+
+                    </div>
+                    <div class="image-flex">
+                        <div class="image-container fade-up">
+                            <img src="./services/Tutorial_01.jpg"  alt="Background fallback" >
+                        </div>
+                        <div class="image-container fade-up">
+                            <img src="./services/Tutorial_02.jpg"  alt="Background fallback" >
+                        </div>
+                        <div class="image-container fade-up">
+                            <img src="./services/Tutorial_03.jpg"  alt="Background fallback" >
+                        </div>
+
+                        <div class="image-container fade-up">
+                            <img src="./services/Tutorial_05.jpg"  alt="Background fallback" >
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
 
 
         </div>
@@ -672,11 +791,12 @@
                                 </g>
                             </svg>
                         </a>
-                        <!--website-->
+                        <!--website
                         <a href="https://hwydexter.wixsite.com/home" title="Resume" class="logo-button" target="_blank" rel="noopener noreferrer">
                             <svg width="20" height="20" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M16 15.503A5.041 5.041 0 1 0
                                  16 5.42a5.041 5.041 0 0 0 0 10.083zm0 2.215c-6.703 0-11 3.699-11 5.5v3.363h22v-3.363c0-2.178-4.068-5.5-11-5.5z"/></svg>
                         </a>
+                        -->
                         <!--youtube
                         <a href="https://www.youtube.com/@DYFortescue" title="Youtube" class="logo-button" target="_blank" rel="noopener noreferrer">
                             <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20" viewBox="0 0 30 30">
