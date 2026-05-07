@@ -146,23 +146,22 @@
         width:60vw;
     }
     .image-container-white,.image-container{
-        max-width: 100%;
+        max-width: 49%;
     }
     .services-subgrid{
-        column-gap: 1rem;
+        grid-template-columns: 1fr;
+        row-gap: 1rem;
         align-items: start;
     }
     .services-card{
         text-align: left;
     }
     .image-bento{
-        grid-template-columns: 1fr;
-        overflow: visible;
-          grid-template-areas: 
-            "box-1"
-            "box-2"
-            "box-3";
-        max-width:100%;
+
+        margin-bottom: 5rem;
+    }
+    .image-flex{
+        margin-bottom: 5rem;
     }
     .work-grid {
         grid-template-columns: 1fr;
