@@ -19,8 +19,8 @@
 
         .logo {
             position:absolute;
-            top:0%;
-            left:20px;
+            top:20px;
+            left:30px;
             scale:0.9;
             transform: translate(-25px,-20px);
             z-index:1100;
@@ -31,7 +31,7 @@
         }
 
         .logo a:hover{
-            filter:brightness(80%) saturate(400%);
+            filter:brightness(90%) saturate(400%);
 
         }
 
