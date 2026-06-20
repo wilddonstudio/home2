@@ -159,7 +159,7 @@
         .halftone{
             display:grid;
             grid-template-columns: repeat(50,100px);
-            grid-template-rows: 200px;
+            grid-template-rows: 400px;
             grid-auto-rows:0;
             width:100%;
             top:0px;
@@ -168,9 +168,10 @@
             position:fixed;
             z-index:1000;
             opacity: 1;
-            transform:translate(0%,-20%);
+            transform:translate(0%,-60%);
         }
         .halftone img{
+     transform:translate(-1000px);
             width:100%;
             height:100%;
 

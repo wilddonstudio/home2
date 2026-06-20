@@ -61,7 +61,7 @@
       filter: brightness(150%);
     }
 
-    .hero-content h2 {
+    .hero-content h3 {
 /*
       font-family: "Black Ops One", system-ui;
       font-optical-sizing: auto;
@@ -87,7 +87,7 @@
       
     }
 
-    .hero-content h2:hover{
+    .hero-content h3:hover{
       filter: brightness(130%);
     }
 
