@@ -16,7 +16,6 @@ const observer = new IntersectionObserver((entries) => {
 document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
 
-
 //---------------------------------------------BUTTON
 const buttons = document.querySelectorAll('.work-card');
 const buttons2 = document.querySelectorAll('.work-card-y');
@@ -186,6 +185,8 @@ window.addEventListener('resize', updateVideoDisplay);
 window.addEventListener('load',   updateVideoDisplay);
 
 // Also update when each video actually loads metadata (important!)
+document.querySelectorAll('.work-player').forEach(video => video.addEventListener('loadedmetadata', updateVideoDisplay));
+
 document.querySelectorAll('.fullscreen-wrapper').forEach(block => {
     const video = block.querySelector('.work-player');
     if (video) {
@@ -193,5 +194,8 @@ document.querySelectorAll('.fullscreen-wrapper').forEach(block => {
         video.addEventListener('canplay',        updateVideoDisplay); // sometimes helps
     }
 });
-
+//Videolink
+document.querySelectorAll('.video-link').forEach(link => {
+  link.addEventListener('click', event => event.stopPropagation());
+});
 

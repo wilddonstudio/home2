@@ -44,6 +44,39 @@
 transform: translate(-50%,-50%);
   border: if(style(--test:1):1px solid white; else:none);
 }
+.video-link video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.video-link {
+position: relative;
+  display: block;
+    
+}
+
+
+.video-link svg {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  width: 32px;
+  height: auto;
+  margin-right: 10px;
+  z-index: 2;
+}
+
+.video-link svg path {           
+    transition: fill 0.3s ease;
+}
+
+
+.video-link:hover svg path {
+    fill: var(--accent-light);             
+
+}
 
 .work-card-overlay {
     position: absolute;
